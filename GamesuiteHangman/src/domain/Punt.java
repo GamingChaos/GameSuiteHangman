@@ -2,8 +2,9 @@ package domain;
 
 public class Punt {
 	//Maak variabelen voor Punt
-	int x = 0;
-	int y = 0;
+	private int x = 0;
+	private int y = 0;
+
 	
 	//Punt constructor voor gegeven x en y
 	public Punt(int x, int y ){
