@@ -1,6 +1,6 @@
 package domain;
 
-public class Driehoek extends Vorm {
+public class Driehoek extends Vorm implements Drawable{
 	//Maak variabelen voor cirkel
 	private Punt punt1, punt2, punt3;
 	

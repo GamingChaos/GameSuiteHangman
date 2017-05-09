@@ -1,5 +1,9 @@
 package ui;
 
-public class TekenVenster {
+import java.awt.Canvas;
+
+public class TekenVenster extends Canvas{
 	//TODO: Maak klasse
+	
+	
 }

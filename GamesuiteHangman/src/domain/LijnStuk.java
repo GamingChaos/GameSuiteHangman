@@ -1,6 +1,6 @@
 package domain;
 
-public class LijnStuk extends Vorm {
+public class LijnStuk extends Vorm implements Drawable {
 	//Maak variabelen voor Lijnstuk
 	private Punt start, einde;
 	

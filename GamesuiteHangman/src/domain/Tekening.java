@@ -3,7 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tekening {
+public class Tekening{
 	private String naam;
 	private List<Vorm> vormen = new ArrayList<Vorm>();
 	private static final int MIN_X = 0,  MIN_Y = 0, MAX_X = 399, MAX_Y = 399;
