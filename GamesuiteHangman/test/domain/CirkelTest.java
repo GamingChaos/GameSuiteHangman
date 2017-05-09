@@ -13,13 +13,14 @@ public class CirkelTest {
 	private Cirkel cirkel5;
 	private Cirkel cirkel6;
 	private Cirkel cirkel7;
+	private Cirkel cirkel8;
 	
 	@Before
 	public void setUp() {
-		cirkel1 = new Cirkel(15, 20, 20);
-		cirkel2 = new Cirkel(20, 20, 20);
-		cirkel3 = new Cirkel(20, 20, 20);
-		cirkel7 = new Cirkel(20, 20, 30);
+		this.cirkel1 = new Cirkel(15, 20, 20);
+		this.cirkel2 = new Cirkel(20, 20, 20);
+		this.cirkel3 = new Cirkel(20, 20, 20);
+		this.cirkel7 = new Cirkel(20, 20, 30);
 	}
 	
 	@Test (expected = DomainException.class)
@@ -38,17 +39,25 @@ public class CirkelTest {
 	}
 	
 	@Test
+	public void Test_Cirkel_wordt_tegoei_gemaakt(){
+		cirkel8 = new Cirkel(5, 20, 8);
+		assertEquals(8, cirkel8.getRadius());
+		assertEquals(5, cirkel8.getMiddelpunt().getX());
+		assertEquals(20, cirkel8.getMiddelpunt().getY());
+	}
+	
+	@Test
 	public void Test_equals_geeft_true_bij_dezelfde_straal_en_middelpunt(){
-		assertTrue(cirkel2.equals(cirkel3));
+		assertTrue(this.cirkel2.equals(cirkel3));
 	}
 	
 	@Test
 	public void Test_equals_geeft_false_bij_dezelfde_straal_en_verschillend_middelpunt(){
-		assertFalse(cirkel1.equals(cirkel3));
+		assertFalse(this.cirkel1.equals(cirkel3));
 	}
 	
 	@Test
 	public void Test_equals_geeft_false_bij_verschillend_straal_en_hetzelfde_middelpunt(){
-		assertFalse(cirkel7.equals(cirkel3));
+		assertFalse(this.cirkel7.equals(cirkel3));
 	}
 }
