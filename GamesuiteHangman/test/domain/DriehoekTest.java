@@ -14,6 +14,8 @@ public class DriehoekTest {
 	private Punt punt3 = new Punt(190, 30);
 	private Punt zelfdeAlsPunt3 = new Punt(190, 30);
 	private Punt verschillendVanPunt3 = new Punt(120, 100);
+	private Punt punt1ZelfdeLijn = new Punt(20, 20);
+	private Punt punt1ZelfdeLijnn = new Punt(30, 20);
 
 	@Test
 	public void Driehoek_moet_DrieHoek_aanmaken_met_gegeven_hoekpunten() {
@@ -64,6 +66,21 @@ public class DriehoekTest {
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		Driehoek drieHoek = new Driehoek(punt1, punt2, punt3);
 		assertFalse(drieHoek.equals(null));
+	}
+	@Test (expected = DomainException.class)
+	public void setter_moet_DomainException_teruggeven_als_2_punten_samenvallen(){
+		new Driehoek(punt1, punt1ZelfdeLijn, punt1ZelfdeLijnn);
+	}
+	@Test (expected = DomainException.class)
+	public void hoekpunten_mogen_niet_samenvallen(){
+		new Driehoek(punt1, punt2, zelfdeAlsPunt1);
+	}
+	@Test
+	public void Driehoek_maakt_driehoek_aan_met_juiste_parameters(){
+		Driehoek driehoek = new Driehoek(punt1, punt2, punt3);
+		assertEquals(punt1, driehoek.getHoekPunt1());
+		assertEquals(punt2, driehoek.getHoekPunt2());
+		assertEquals(punt3, driehoek.getHoekPunt3());
 	}
 
 }
