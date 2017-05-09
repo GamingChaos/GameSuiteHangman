@@ -35,6 +35,7 @@ public class Tekening {
 		if(naam == null || naam.trim().isEmpty()) throw new DomainException("Naam mag niet leeg zijn");
 		this.naam = naam;
 	}
+	
 	@Override
 	public boolean equals(Object o){
 		boolean temp = true;
@@ -43,10 +44,7 @@ public class Tekening {
 			Tekening t = (Tekening) o;
 			if((getAantalVormen() == t.getAantalVormen() ) ){
 				for(int i = 0 ; i < getAantalVormen(); i++){
-					for(int j = 0 ; j < t.getAantalVormen(); j++){
-					if(this.vormen.get(i).equals(t.vormen.get(j)))temp = true;
-					else temp = false;
-				}
+					if(!vormen.contains(t.getVorm(i))) temp = false;
 				}
 			}
 			else if(getAantalVormen() != t.getAantalVormen()){
