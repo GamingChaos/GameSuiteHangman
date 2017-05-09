@@ -1,7 +1,7 @@
 package domain;
 
 public class DomainException extends RuntimeException{
-	public DomainException(String exception){
+	public DomainException(Exception exception){
 		super(exception);
 	}
 }

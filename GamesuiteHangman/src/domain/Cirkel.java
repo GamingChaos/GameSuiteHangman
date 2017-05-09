@@ -15,11 +15,21 @@ public class Cirkel {
 		
 	}
 	
+	public Cirkel(int x, int y, int radius){
+		try{
+			new Cirkel(new Punt(x, y), radius);
+		}
+		catch(IllegalArgumentException iae){
+			throw new DomainException(iae);
+		}
+	}
+	
 	public void setMiddelpunt(Punt middelpunt) throws IllegalArgumentException{
 		if(middelpunt  == null)
 			throw new IllegalArgumentException("geef een geldig punt op");
 		this.middelpunt = middelpunt;
 	}
+	
 	
 	public void setRadius(int radius) throws IllegalArgumentException{
 		if(radius <= 0)
@@ -41,7 +51,7 @@ public class Cirkel {
 		
 		if(o instanceof Cirkel){
 			Cirkel c = (Cirkel) o;
-			if(c.getRadius() == this.radius && c.getMiddelpunt().equals(this.middelpunt))
+			if(this.getMiddelpunt().equals(c.getMiddelpunt()) && this.getRadius() == c.getRadius())
 				result = true;
 		}
 		return result;
