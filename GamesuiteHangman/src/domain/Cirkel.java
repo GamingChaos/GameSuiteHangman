@@ -5,14 +5,12 @@ public class Cirkel {
 	private Punt middelpunt;
 	private int radius;
 	
-<<<<<<< HEAD
 	public Cirkel(int x, int y, int radius){
 			this(new Punt(x, y), radius);
 	}
 	
-=======
 	//Cirkel constructor voor punt en radius gegeven
->>>>>>> 67bf7bd8f9f8bcb3ae075d27c416067063b87717
+
 	public Cirkel(Punt punt, int radius){
 		try{
 			//Zet variabelen
@@ -23,11 +21,7 @@ public class Cirkel {
 			throw new DomainException(iae);
 		}
 	}
-<<<<<<< HEAD
-	
-	
-	
-=======
+
 	//Cirkel constructor voor x, y en radius
 	public Cirkel(int x, int y, int radius){
 		try{
@@ -39,7 +33,6 @@ public class Cirkel {
 		}
 	}
 	//Zet het middelpunt
->>>>>>> 67bf7bd8f9f8bcb3ae075d27c416067063b87717
 	public void setMiddelpunt(Punt middelpunt) throws IllegalArgumentException{
 		if(middelpunt  == null)
 			throw new IllegalArgumentException("geef een geldig punt op");

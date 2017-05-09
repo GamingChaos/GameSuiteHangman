@@ -1,16 +1,14 @@
 package domain;
 
 public class Punt {
-<<<<<<< HEAD
 	private int x = 0;
 	private int y = 0;
-=======
+
 	//Maak variabelen voor Punt
 	int x = 0;
 	int y = 0;
 	
 	//Punt constructor voor gegeven x en y
->>>>>>> 67bf7bd8f9f8bcb3ae075d27c416067063b87717
 	public Punt(int x, int y ){
 		this.setX(x);
 		this.setY(y);
