@@ -10,7 +10,7 @@ private int score = 0;
 
 	
 	private void setNaam(String naam) {
-		if(naam == null || naam.trim().isEmpty())throw new IllegalArgumentException("naam mag niet leeg zijn en mag ook niet null zijn!");
+		if(  naam == null ||  naam.trim().isEmpty() )throw new DomainException("naam mag niet leeg zijn en mag ook niet null zijn!");
 		this.naam = naam;
 	}
 
@@ -23,8 +23,10 @@ private int score = 0;
 	}
 
 	public void addToScore(int positiveScore) {
-		if(positiveScore < 0)throw new IllegalArgumentException("score mag geen negatief getal zijn!");
 		score += positiveScore;
+		if(score < 0)throw new DomainException("score mag geen negatief getal zijn!");
+		
+		
 		
 	}
 	@Override
