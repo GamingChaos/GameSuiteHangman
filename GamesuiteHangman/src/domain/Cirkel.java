@@ -1,6 +1,6 @@
 package domain;
 
-public class Cirkel {
+public class Cirkel extends Vorm {
 	//Maak variabelen voor Cirkel
 	private Punt middelpunt;
 	private int radius;
