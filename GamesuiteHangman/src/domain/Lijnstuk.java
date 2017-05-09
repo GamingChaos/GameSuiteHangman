@@ -8,9 +8,9 @@ private Punt einde;
 	}
 
 	public void setStartEnEindPunt(Punt start, Punt einde) {
-		if(start == einde)throw new DomainException("startpunt mag niet gelijk zijn aan eind punt!"); 
 		if(start == null || einde == null)throw new DomainException("Start en einde mag niet null zij!");
-		
+		if(start.equals(einde))throw new DomainException("startpunt mag niet gelijk zijn aan eind punt!"); 
+
 		this.start = start;
 		this.einde =einde;
 		
