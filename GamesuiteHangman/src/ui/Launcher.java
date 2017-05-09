@@ -24,6 +24,22 @@ public class Launcher {
 			JOptionPane.showMessageDialog(null, "U heeft een correcte rechthoek aangemaakt: " + new Rechthoek(new Punt(Integer.parseInt(JOptionPane.showInputDialog("x coordinaat van het punt:")), Integer.parseInt(JOptionPane.showInputDialog("y coordinaat van het punt:"))), Integer.parseInt(JOptionPane.showInputDialog("De breedte van de rechthoek:")), Integer.parseInt(JOptionPane.showInputDialog("De hoogte van de rechthoek:"))).toString());
 
 			JOptionPane.showMessageDialog(null, "... zal binnekort spelen", speler.getNaam(), JOptionPane.INFORMATION_MESSAGE);
+			
+			//Maak tekening aan
+			String naamTekening = JOptionPane.showInputDialog("Geef de naam van je tekening");
+			int keuze = Integer.parseInt(JOptionPane.showInputDialog("Wat wil je doen:\n1. vorm maken\n2. Tekening tonen\n\n0. Stoppen"));
+			switch(keuze){
+			case 0:
+				//stoppen
+				break;
+			case 1:
+				//Vorm maken
+				break;
+			case 2:
+				//tekening tonen
+				break;
+			
+			}
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());
