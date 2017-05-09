@@ -35,7 +35,7 @@ public class Rechthoek {
 	}
 	
 	public int getHoogte(){
-		return hoogte
+		return hoogte;
 	}
 	
 	@Override
