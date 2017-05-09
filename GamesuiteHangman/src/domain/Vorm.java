@@ -1,5 +1,5 @@
 package domain;
 
-public class Vorm {
-
+public abstract class  Vorm {
+	
 }
