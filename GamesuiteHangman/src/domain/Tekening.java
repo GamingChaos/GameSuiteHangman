@@ -8,7 +8,7 @@ public class Tekening{
 	private List<Vorm> vormen = new ArrayList<Vorm>();
 	private static final int MIN_X = 0,  MIN_Y = 0, MAX_X = 399, MAX_Y = 399;
 	public Tekening(String naam){
-		this.naam = naam;
+		this.setNaam(naam);
 	}
 	public String getNaam(){
 		return naam;
@@ -37,10 +37,24 @@ public class Tekening{
 	}
 	@Override
 	public boolean equals(Object o){
+		boolean temp = true;
+		 if(o == null) return false;
 		if(o instanceof Tekening){
 			Tekening t = (Tekening) o;
-			if()
+			if((getAantalVormen() == t.getAantalVormen() ) ){
+				for(int i = 0 ; i < getAantalVormen(); i++){
+					for(int j = 0 ; j < t.getAantalVormen(); j++){
+					if(this.vormen.get(i).equals(t.vormen.get(j)))temp = true;
+					else temp = false;
+				}
+				}
+			}
+			else if(getAantalVormen() != t.getAantalVormen()){
+				return false;
+			}
+			
 		}
+		return temp;
 	}
 	@Override
 	public String toString(){
