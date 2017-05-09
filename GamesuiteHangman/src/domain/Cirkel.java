@@ -4,6 +4,10 @@ public class Cirkel {
 	private Punt middelpunt;
 	private int radius;
 	
+	public Cirkel(int x, int y, int radius){
+			this(new Punt(x, y), radius);
+	}
+	
 	public Cirkel(Punt punt, int radius){
 		try{
 			setMiddelpunt(punt);
@@ -12,17 +16,9 @@ public class Cirkel {
 		catch(IllegalArgumentException iae){
 			throw new DomainException(iae);
 		}
-		
 	}
 	
-	public Cirkel(int x, int y, int radius){
-		try{
-			new Cirkel(new Punt(x, y), radius);
-		}
-		catch(IllegalArgumentException iae){
-			throw new DomainException(iae);
-		}
-	}
+	
 	
 	public void setMiddelpunt(Punt middelpunt) throws IllegalArgumentException{
 		if(middelpunt  == null)
@@ -48,7 +44,6 @@ public class Cirkel {
 	@Override
 	public boolean equals(Object o){
 		boolean result = false;
-		
 		if(o instanceof Cirkel){
 			Cirkel c = (Cirkel) o;
 			if(this.getMiddelpunt().equals(c.getMiddelpunt()) && this.getRadius() == c.getRadius())
