@@ -1,5 +1,5 @@
 package ui;
 
-public class TekenVenster {
+public class HangManUI {
 	//TODO: Maak klasse
 }
