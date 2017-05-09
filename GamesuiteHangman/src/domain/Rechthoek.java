@@ -1,7 +1,7 @@
 package domain;
 
 
-public class Rechthoek {
+public class Rechthoek extends Vorm {
 	private int breedte, hoogte;
 	Punt hoek;
 	
@@ -35,7 +35,7 @@ public class Rechthoek {
 	}
 	
 	public int getHoogte(){
-		return hoogte
+		return hoogte;
 	}
 	
 	@Override

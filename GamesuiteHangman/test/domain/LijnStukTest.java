@@ -37,10 +37,16 @@ public class LijnStukTest {
 		assertTrue(lijnStuk.equals(zelfdeLijnStuk));
 	}
 	
+	
 	@Test
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		LijnStuk lijnStuk = new LijnStuk(punt1, punt2);
 		assertFalse(lijnStuk.equals(null));
+	}
+	@Test (expected = DomainException.class)
+	public void Lijnstuk_Moet_exception_gooien_als_start_en_eindpunt_aan_elkaar_gelijk_zijn(){
+		new LijnStuk(punt1,punt1);
+		
 	}
 }
 	
