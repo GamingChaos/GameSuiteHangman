@@ -5,9 +5,7 @@ public class Cirkel {
 	private Punt middelpunt;
 	private int radius;
 	
-	public Cirkel(int x, int y, int radius){
-			this(new Punt(x, y), radius);
-	}
+	
 	
 	//Cirkel constructor voor punt en radius gegeven
 
@@ -24,14 +22,9 @@ public class Cirkel {
 
 	//Cirkel constructor voor x, y en radius
 	public Cirkel(int x, int y, int radius){
-		try{
-			//Zet variabelen via eerste cirkel constructor
-			new Cirkel(new Punt(x, y), radius);
-		}
-		catch(IllegalArgumentException iae){
-			throw new DomainException(iae);
-		}
+		this(new Punt(x, y), radius);
 	}
+	
 	//Zet het middelpunt
 	public void setMiddelpunt(Punt middelpunt) throws IllegalArgumentException{
 		if(middelpunt  == null)
