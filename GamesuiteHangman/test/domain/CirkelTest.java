@@ -38,17 +38,17 @@ public class CirkelTest {
 	}
 	
 	@Test
-	public void Test_equals_geeft_treu_bij_dezelfde_straal_en_middelpunt(){
-		assertEquals(true, cirkel2.equals(cirkel3));
+	public void Test_equals_geeft_true_bij_dezelfde_straal_en_middelpunt(){
+		assertTrue(cirkel2.equals(cirkel3));
 	}
 	
 	@Test
 	public void Test_equals_geeft_false_bij_dezelfde_straal_en_verschillend_middelpunt(){
-		assertEquals(false, cirkel1.equals(cirkel3));
+		assertFalse(cirkel1.equals(cirkel3));
 	}
 	
 	@Test
 	public void Test_equals_geeft_false_bij_verschillend_straal_en_hetzelfde_middelpunt(){
-		assertEquals(false, cirkel7.equals(cirkel3));
+		assertFalse(cirkel7.equals(cirkel3));
 	}
 }
