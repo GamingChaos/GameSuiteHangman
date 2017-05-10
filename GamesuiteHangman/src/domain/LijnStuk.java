@@ -45,7 +45,7 @@ public class LijnStuk extends Vorm implements Drawable {
 	}
 	@Override
 	public Omhullende getOmhullende() {
-		return new Omhullende(new Punt(minX(), minY()), einde.getX() - start.getX(), maxY() - minY() );
+		return new Omhullende(new Punt(minX(), minY()), maxX() - minX(), maxY() - minY() );
 	}
 	
 	private int minX()
