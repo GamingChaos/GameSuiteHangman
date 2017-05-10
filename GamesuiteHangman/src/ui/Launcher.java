@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import domain.Punt;
 import domain.Rechthoek;
 import domain.Speler;
+import domain.Vorm;
 
 public class Launcher {
 
@@ -33,7 +34,7 @@ public class Launcher {
 				//stoppen
 				break;
 			case 1:
-				//Vorm maken
+				Vorm vorm = new Vorm(JOptionPane.showInputDialog("Welke vorm wil je maken?"));
 				break;
 			case 2:
 				//tekening tonen
