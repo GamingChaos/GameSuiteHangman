@@ -1,3 +1,17 @@
+/**
+* Hangmang Game Test
+* *
+* @author  JanRomo
+* @author  bramdeman1
+* @author  Kenzo1997
+* @author  GamingChaos
+* @author  CyllosBE
+* *
+* @version Pre-alfa
+* @since   2017-05-08
+* 
+*/
+
 package domain;
 
 import static org.junit.Assert.assertEquals;
@@ -106,6 +120,18 @@ public class TekeningTest {
 	public void voegToe_gooit_exception_wanneer_minimumX_van_omhullende_van_vorm_kleiner_dan_minimumX_tekening(){
 		Tekening huis = createHuisMetSchouw();
 		huis.voegToe(fouteRechthoek);
+	}
+	@Test
+	public void getVorm_geeft_juiste_vorm(){
+		Tekening huis = createHuisMetSchouw();
+		assertTrue(huis.getVorm(1).equals(dak));
+	}
+	
+	@Test
+	public void verwijder_verwijdert_juiste_vorm(){
+		Tekening huis = createHuisMetSchouw();
+		huis.verwijder(dak);
+		assertFalse(huis.bevat(dak));
 	}
 
 
