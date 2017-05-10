@@ -60,4 +60,10 @@ public class CirkelTest {
 	public void Test_equals_geeft_false_bij_verschillend_straal_en_hetzelfde_middelpunt(){
 		assertFalse(this.cirkel7.equals(cirkel3));
 	}
+	
+	@Test
+	public void Cirkel_geeft_true_als_omhullende_juist_is(){
+		Omhullende c1 = new Omhullende(new Punt(-5,0), 40, 40);
+		assertTrue( c1.equals(cirkel1.getOmhullende()));
+	}
 }

@@ -48,4 +48,47 @@ public class Driehoek extends Vorm implements Drawable{
 	public String toString(){
 		return "Driehoek: hoekpunt1: " + getHoekPunt1().toString() + " - hoekpunt2: " + getHoekPunt2().toString() + " - hoekpunt3: " + getHoekPunt3().toString(); 
 	}
+
+	@Override
+	public Omhullende getOmhullende() {
+		return new Omhullende(new Punt(minX(), minY()), maxX() - minX(), maxY() - minY());
+	}
+	
+	private int minX(){
+		if( punt1.getX() < punt2.getX() && punt1.getX() < punt3.getX() )
+			return punt1.getX();
+		else if( punt2.getX() < punt1.getX() && punt2.getX() < punt3.getX() )
+			return punt2.getX();
+		
+		return punt3.getX();
+	}
+	
+	private int minY()
+	{
+		if( punt1.getY() < punt2.getY() && punt1.getY() < punt3.getY() )
+			return punt1.getY();
+		else if( punt2.getY() < punt1.getY() && punt2.getY() < punt3.getY() )
+			return punt2.getY();
+		
+		return punt3.getY();
+	}
+	
+	private int maxX(){
+		if( punt1.getX() > punt2.getX() && punt1.getX() > punt3.getX() )
+			return punt1.getX();
+		else if( punt2.getX() > punt1.getX() && punt2.getX() > punt3.getX() )
+			return punt2.getX();
+		
+		return punt3.getX();
+	}
+	
+	private int maxY()
+	{
+		if( punt1.getY() > punt2.getY() && punt1.getY() > punt3.getY() )
+			return punt1.getY();
+		else if( punt2.getY() > punt1.getY() && punt2.getY() > punt3.getY() )
+			return punt2.getY();
+		
+		return punt3.getY();
+	}
 }

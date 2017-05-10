@@ -82,5 +82,11 @@ public class DriehoekTest {
 		assertEquals(punt2, driehoek.getHoekPunt2());
 		assertEquals(punt3, driehoek.getHoekPunt3());
 	}
+	
+	@Test
+	public void Driehoek_geeft_true_als_omhullende_juist_is(){
+		Omhullende o = new Omhullende(new Punt(10,20), 180, 20);
+		assertTrue(o.equals(new Driehoek(punt1, punt2, punt3).getOmhullende()));
+	}
 
 }

@@ -60,4 +60,9 @@ public class Rechthoek extends Vorm implements Drawable{
 	public String toString(){
 		return "Rechtoek: positie: " + getLinkerBovenhoek().toString() + " - breedte: " + getBreedte() + " - hoogte: " + getHoogte();
 	}
+
+	@Override
+	public Omhullende getOmhullende() {
+		return new Omhullende(hoek, breedte, hoogte);
+	}
 }

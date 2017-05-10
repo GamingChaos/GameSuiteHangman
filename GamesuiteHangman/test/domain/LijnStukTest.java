@@ -48,5 +48,12 @@ public class LijnStukTest {
 		new LijnStuk(punt1,punt1);
 		
 	}
+	
+	@Test
+	public void Lijnstuk_geeft_true_als_omhullende_juist_is()
+	{
+		Omhullende o = new Omhullende(new Punt(10,20), 180, 10);
+		assertTrue(o.equals(new LijnStuk(punt1, punt2).getOmhullende()));
+	}
 }
 	

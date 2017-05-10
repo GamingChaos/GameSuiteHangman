@@ -43,4 +43,28 @@ public class LijnStuk extends Vorm implements Drawable {
 	public String toString(){
 		return "start: " + start + "\n einde: " + einde;
 	}
+	@Override
+	public Omhullende getOmhullende() {
+		return new Omhullende(new Punt(minX(), minY()), einde.getX() - start.getX(), maxY() - minY() );
+	}
+	
+	private int minX()
+	{
+		return start.getX() < einde.getX() ? start.getX() : einde.getX();
+	}
+	
+	private int minY()
+	{
+		return start.getY() < einde.getY() ? start.getY() : einde.getY();
+	}
+	
+	private int maxX()
+	{
+		return start.getX() > einde.getX() ? start.getX() : einde.getX();
+	}
+	
+	private int maxY()
+	{
+		return start.getY() > einde.getY() ? start.getY() : einde.getY();
+	}
 }

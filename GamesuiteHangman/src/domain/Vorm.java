@@ -1,5 +1,5 @@
 package domain;
 
 public abstract class  Vorm {
-	//TODO: Maak klasse
+	public abstract Omhullende getOmhullende();
 }
