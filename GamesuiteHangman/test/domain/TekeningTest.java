@@ -107,6 +107,18 @@ public class TekeningTest {
 		Tekening huis = createHuisMetSchouw();
 		huis.voegToe(fouteRechthoek);
 	}
+	@Test
+	public void getVorm_geeft_juiste_vorm(){
+		Tekening huis = createHuisMetSchouw();
+		assertTrue(huis.getVorm(1).equals(dak));
+	}
+	
+	@Test
+	public void verwijder_verwijdert_juiste_vorm(){
+		Tekening huis = createHuisMetSchouw();
+		huis.verwijder(dak);
+		assertFalse(huis.bevat(dak));
+	}
 
 
 	public Tekening createHuisMetSchouw() {
