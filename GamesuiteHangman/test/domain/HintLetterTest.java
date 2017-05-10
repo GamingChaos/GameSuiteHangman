@@ -45,4 +45,8 @@ public class HintLetterTest {
 	public void test_getLetter_geeft_juiste_letter(){
 		assertEquals('f', letter1.getLetter());
 	}
+	
+	public void testtoChargeeftjuistechar(){
+		assertEquals('f', letter1.toChar());
+	}
 }
