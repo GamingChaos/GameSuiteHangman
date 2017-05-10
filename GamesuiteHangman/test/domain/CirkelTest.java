@@ -1,5 +1,5 @@
 /**
-* Hangmang Game
+* Hangmang Game Test
 * *
 * @author  JanRomo
 * @author  bramdeman1
