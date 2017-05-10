@@ -15,7 +15,7 @@ public class Tekening implements Drawable{
 	}
 	public void voegToe(Vorm vorm) throws DomainException{
 		if(vorm == null) throw new DomainException("Vorm mag niet null zijn");
-		if(vorm.getomhullende().minimaleX() < getMinX()) throw new DomainException("mag niet buiten de tekening vormen aanmaken");
+		if(vorm.getOmhullende().minimaleX() < getMinX()) throw new DomainException("mag niet buiten de tekening vormen aanmaken");
 		if(bevat(vorm)) throw new DomainException("Vorm is al toegevoegd");
 		vormen.add(vorm);
 	}

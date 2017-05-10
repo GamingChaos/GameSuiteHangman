@@ -16,6 +16,7 @@ public class TekeningTest {
 	private Vorm raambalk1;
 	private Vorm raambalk2;
 	private Vorm schouwNietInTekening;
+	private Vorm fouteRechthoek;
 	
 	@Before
 	public void setUp() {
@@ -27,6 +28,7 @@ public class TekeningTest {
 		raambalk1 = new LijnStuk(new Punt(210, 250), new Punt(290, 250));
 		raambalk2 = new LijnStuk(new Punt(250, 220), new Punt(250, 280));
 		schouwNietInTekening = new Rechthoek(new Punt(150, 150), 20,40);
+		fouteRechthoek = new Rechthoek(new Punt(-5, 10), 20,40);
 	}
 
 	@Test
@@ -99,6 +101,11 @@ public class TekeningTest {
 		Tekening huisMetSchouw = createHuisMetSchouw();
 		huisMetSchouw.verwijder(schouwNietInTekening);
 		assertTrue(huis.equals(huisMetSchouw));
+	}
+	@Test (expected = DomainException.class)
+	public void voegToe_gooit_exception_wanneer_minimumX_van_omhullende_van_vorm_kleiner_dan_minimumX_tekening(){
+		Tekening huis = createHuisMetSchouw();
+		huis.voegToe(fouteRechthoek);
 	}
 
 
