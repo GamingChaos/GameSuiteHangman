@@ -1,3 +1,17 @@
+/**
+* Hangmang Game Test
+* *
+* @author  JanRomo
+* @author  bramdeman1
+* @author  Kenzo1997
+* @author  GamingChaos
+* @author  CyllosBE
+* *
+* @version Pre-alfa
+* @since   2017-05-08
+* 
+*/
+
 package domain;
 
 import static org.junit.Assert.*;
@@ -44,5 +58,9 @@ public class HintLetterTest {
 	@Test
 	public void test_getLetter_geeft_juiste_letter(){
 		assertEquals('f', letter1.getLetter());
+	}
+	
+	public void testtoChargeeftjuistechar(){
+		assertEquals('f', letter1.toChar());
 	}
 }
