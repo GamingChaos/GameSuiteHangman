@@ -26,14 +26,14 @@ public class Cirkel extends Vorm implements Drawable{
 	}
 	
 	//Zet het middelpunt
-	public void setMiddelpunt(Punt middelpunt) throws IllegalArgumentException{
+	private void setMiddelpunt(Punt middelpunt) throws IllegalArgumentException{
 		if(middelpunt  == null)
 			throw new IllegalArgumentException("geef een geldig punt op");
 		this.middelpunt = middelpunt;
 	}
 	
 	//Zet de radius
-	public void setRadius(int radius) throws IllegalArgumentException{
+	private void setRadius(int radius) throws IllegalArgumentException{
 		if(radius <= 0)
 			throw new IllegalArgumentException("geef een geldige radius op");
 		this.radius = radius;
