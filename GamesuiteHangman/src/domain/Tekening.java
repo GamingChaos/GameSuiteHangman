@@ -3,7 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tekening{
+public class Tekening implements Drawable{
 	private String naam;
 	private List<Vorm> vormen = new ArrayList<Vorm>();
 	private static final int MIN_X = 0,  MIN_Y = 0, MAX_X = 399, MAX_Y = 399;
@@ -15,6 +15,7 @@ public class Tekening{
 	}
 	public void voegToe(Vorm vorm) throws DomainException{
 		if(vorm == null) throw new DomainException("Vorm mag niet null zijn");
+		if(vorm.getomhullende().minimaleX() < getMinX()) throw new DomainException("mag niet buiten de tekening vormen aanmaken");
 		if(bevat(vorm)) throw new DomainException("Vorm is al toegevoegd");
 		vormen.add(vorm);
 	}
@@ -61,6 +62,9 @@ public class Tekening{
 			temp += "\n" + vorm.toString();
 		}
 		return temp;
+	}
+	public static int getMinX() {
+		return MIN_X;
 	}
 
 }
