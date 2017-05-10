@@ -14,6 +14,9 @@
 
 package ui;
 
-public class HangManUI {
-	//TODO: Maak klasse
+import javax.swing.JOptionPane;
+import domain.HintWoord;
+
+public class HangManUi {
+	
 }
