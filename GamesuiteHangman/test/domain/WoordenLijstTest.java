@@ -2,20 +2,18 @@ package domain;
 
 import static org.junit.Assert.*;
 
-<<<<<<< HEAD
-=======
+
 import java.io.FileNotFoundException;
->>>>>>> 3ef0e5e77a517960e42ea73fde80ff021d464476
+
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
-<<<<<<< HEAD
-=======
+
 import db.WoordLezer;
 
->>>>>>> 3ef0e5e77a517960e42ea73fde80ff021d464476
+
 public class WoordenLijstTest {
 	
 	private WoordenLijst woordenlijstLeeg;
@@ -71,9 +69,7 @@ public class WoordenLijstTest {
 
 		woordenlijstMetGeldigeWoorden.voegToe(woordAlInLijst);
 	}
-<<<<<<< HEAD
 
-=======
 	
 	@Test
 	public void test()
@@ -86,5 +82,5 @@ public class WoordenLijstTest {
 			e.printStackTrace();
 		}
 	}
->>>>>>> 3ef0e5e77a517960e42ea73fde80ff021d464476
+
 }

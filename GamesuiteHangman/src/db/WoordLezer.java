@@ -25,7 +25,7 @@ import java.util.Scanner;
 import domain.WoordenLijst;
 
 public class WoordLezer {
-<<<<<<< HEAD
+
  void woordenLezer(String bestand)throws FileNotFoundException{
 		
 		File hangmanWoorden = new File("hangman.txt");
@@ -42,7 +42,7 @@ public class WoordLezer {
  
  
 
-=======
+
 	private WoordenLijst lijst;
 	
 	public WoordLezer(String bestand) throws FileNotFoundException
@@ -60,5 +60,5 @@ public class WoordLezer {
 	{
 		return lijst;
 	}
->>>>>>> 3ef0e5e77a517960e42ea73fde80ff021d464476
+
 }
