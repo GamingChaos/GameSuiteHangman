@@ -17,7 +17,7 @@ package ui;
 import javax.swing.JOptionPane;
 import domain.HintWoord;
 
-public class HangManUi {
+public class HangManUI {
 	public static void play(){
 		HintWoord woord;
 		try {
