@@ -14,16 +14,20 @@
 
 package ui;
 
+import java.io.FileNotFoundException;
+
 import javax.swing.JOptionPane;
 
+import db.WoordLezer;
 import domain.Punt;
 import domain.Rechthoek;
 import domain.Speler;
 import domain.Tekening;
 import domain.Vorm;
+import domain.WoordenLijst;
 
 public class Launcher {
-
+	
 	public static void main(String[] args) {
 		Speler speler= null;
 		try{
@@ -44,8 +48,8 @@ public class Launcher {
 			default: throw new IllegalArgumentException("typ de naam van het spel juist");
 			}
 		}
-		catch(Exception e){
-			throw new UiException(e);
+		catch(IllegalArgumentException iae){
+			throw new UiException(iae);
 		}
 		
 		//Maak punt aan
