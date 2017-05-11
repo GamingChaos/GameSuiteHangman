@@ -23,8 +23,9 @@ public class WoordenLijst {
 		woordenLijst = new ArrayList<>();
 	}
 	public void voegToe(String woord){
+		
+		if( woord == null || woord.trim().isEmpty())throw new DomainException("woord mag niet leeg zijn of null!");
 		if(woordenLijst.contains(woord))throw new DomainException("woord mag niet twee keer voorkomen!");
-		if(woord == null || woord.trim().isEmpty())throw new DomainException("woord mag niet leeg zijn of null!");
 		woordenLijst.add(woord);
 	}
 	
@@ -37,12 +38,7 @@ public class WoordenLijst {
 		else if(woordenLijst.size() == 1){
 			return woordenLijst.get(0);
 		}
-		
-		
-		
-		
 		return woordenLijst.get(r);
-		
 	}
 	public int getAantalWoorden(){
 		return woordenLijst.size();

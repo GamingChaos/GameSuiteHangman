@@ -14,6 +14,8 @@
 
 package domain;
 
+import java.awt.Graphics;
+
 public class Cirkel extends Vorm implements Drawable{
 	//Maak variabelen voor Cirkel
 	private Punt middelpunt;
@@ -83,5 +85,11 @@ public class Cirkel extends Vorm implements Drawable{
 	@Override
 	public Omhullende getOmhullende() {
 		return new Omhullende(new Punt(middelpunt.getX() - radius, middelpunt.getY() - radius), radius * 2, radius * 2);
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 }

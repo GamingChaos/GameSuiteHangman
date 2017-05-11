@@ -17,12 +17,13 @@ package domain;
 import java.util.ArrayList;
 
 public class HintWoord {
-	private ArrayList<HintLetter> woordLijst;
+	private ArrayList<HintLetter> letterLijst;
 	private String woordString;
 	
 	public HintWoord(String woord) throws Exception{
 		try{
-			this.addWoord(woord);
+			letterLijst = new ArrayList<HintLetter>();
+			this.addLetter(woord);
 			this.woordString = woord;
 		}
 		catch(IllegalArgumentException iae){
@@ -32,8 +33,8 @@ public class HintWoord {
 	
 	public boolean raad(char letter){
 		boolean result = false;
-		for(int i = 0; i < woordLijst.size(); i++){
-			if(woordLijst.get(i).raad(letter) == true)
+		for(int i = 0; i < letterLijst.size(); i++){
+			if(letterLijst.get(i).raad(letter) == true)
 				result = true;
 		}
 		return result;
@@ -41,12 +42,12 @@ public class HintWoord {
 	
 	public boolean isGeraden(){
 		int aantal = 0;
-		for(int i = 0; i < woordLijst.size(); i++){
-			if(woordLijst.get(i).isGeraden() == true){
+		for(int i = 0; i < letterLijst.size(); i++){
+			if(letterLijst.get(i).isGeraden() == true){
 				aantal++;
 			}
 		}
-		if(aantal == woordLijst.size())
+		if(aantal == letterLijst.size())
 			return true;
 		return false;
 	}
@@ -56,16 +57,24 @@ public class HintWoord {
 	}
 	
 	public String toString(){
-		return woordString;
+		String result = "";
+		for(HintLetter h : letterLijst){
+			if(h.isGeraden() == true)
+				result += h.getLetter();
+			else
+				result += "_";
+		}
+		return result;
 	}
 	
-	private void addWoord(String woord) throws Exception{
-		if(woord == null || woord.trim().isEmpty())
+	private void addLetter(String woord) throws Exception{
+		if(woord == null)
 			throw new IllegalArgumentException("geef een woord op");
-		if(woord.length() < 1)
+		if(woord.trim().isEmpty())
 			throw new IllegalArgumentException("geef een geldig woord op");
-		for(int i = 0; i <= woord.length(); i++){
-			this.woordLijst.add(new HintLetter(woord.charAt(i)));
+		HintLetter letter;
+		for(int i = 0; i < woord.length(); i++){
+			letterLijst.add(new HintLetter(woord.charAt(i)));
 		}
 	}
 }

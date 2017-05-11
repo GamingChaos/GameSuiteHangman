@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import domain.Punt;
 import domain.Rechthoek;
 import domain.Speler;
+import domain.Vorm;
 
 public class Launcher {
 
@@ -27,6 +28,14 @@ public class Launcher {
 			//Maak speler aan
 			String naam = JOptionPane.showInputDialog("Welkom! \nHoe heet je?");
 			Speler speler = new Speler(naam);
+			
+			//Wat wil je spelen?
+			String[] games = {"HangMan", "Pictionary"};
+			String spel = JOptionPane.showInputDialog(games, "Welk spel wil je spelen?");
+			if(spel.equals("HangMan"))
+				HangManUI.play();
+			else
+				PictionaryUi.play();
 			
 			//Maak punt aan
 			int x = Integer.parseInt(JOptionPane.showInputDialog("x coordinaat van het punt:"));
@@ -47,7 +56,7 @@ public class Launcher {
 				//stoppen
 				break;
 			case 1:
-				//Vorm maken
+				//vorm maken
 				break;
 			case 2:
 				//tekening tonen

@@ -14,6 +14,7 @@
 
 package domain;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,6 +80,11 @@ public class Tekening implements Drawable{
 	}
 	public static int getMinX() {
 		return MIN_X;
+	}
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
