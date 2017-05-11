@@ -14,9 +14,14 @@
 
 package ui;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
 import javax.swing.JOptionPane;
 
 import db.WoordLezer;
@@ -29,10 +34,12 @@ public class HangManUi {
 	private Tekening tekening;
 	private Speler speler;
 	private ArrayList<String> letters;
+	private GameMainWindow view;
 	
 	public HangManUi(Speler speler){
 		this.tekening = new Tekening(speler.getNaam());
-		GameMainWindow view = new GameMainWindow(speler.getNaam(), tekening);
+		letters = new ArrayList<String>();
+		view = new GameMainWindow(speler.getNaam(), tekening);
 		view.setVisible(true);
 		view.teken();
 		play();
@@ -49,7 +56,8 @@ public class HangManUi {
 		}
 		
 		int vorigeRonde = 0;
-		for(int i = 0; i < 10; i++){
+		int aantalFout = 0;
+		while(aantalFout <= 10){
 			String letterString;
 			switch(vorigeRonde){
 				case 0: 
@@ -93,17 +101,42 @@ public class HangManUi {
 					}
 					break;
 					default: throw new UiException("Default exception at SwitchCase in playfunction");
+				}
+			for(String s : letters){
+				if(s.equals(letterString)){
+					
+				}
 			}
-			
 			boolean geraden = woord.raad(letterString.charAt(0));
-			if(geraden){
+			if(geraden)
 				vorigeRonde = 1;
-				i--;
-			}
-			else
+			else{
 				vorigeRonde = 2;
+				aantalFout++;
+			}
+			view.teken();
 			if(woord.isGeraden()){
-				speler.addToScore(1);
+				File soundfile = new File("applause-01.wav");
+				try{
+					//info geven over soundfile
+					//haal het geluid uit soundfile
+					AudioInputStream soundFormatLenght = AudioSystem.getAudioInputStream(soundfile);
+					//zoek de lengte en het formaat soundFormatLenght, zorgt ervoor dat we kunnen starten en stoppen
+					DataLine.Info info = new DataLine.Info(Clip.class, soundFormatLenght.getFormat());
+					//zet het geluid in het geheugen 
+					//een clip = een audiobestand dat kan worden geladen voor het wordt afgespeeld
+					//geef een clip een lengte en formaat
+					Clip clip = (Clip) AudioSystem.getLine(info);
+					//zet het audiobestand in de clip
+					clip.open(soundFormatLenght);
+					//start de clip
+					clip.start();
+				}
+				catch (Exception e) {
+		               throw new UiException(e);
+		        }
+				
+				this.speler.addToScore(1);
 				String[] jaNee = {"Ja", "Nee"};
 				String opnieuw = JOptionPane.showInputDialog(jaNee, "Gefeliciteerd! U heeft gewonnen! \nWilt u nog eens spelen?");
 				if(opnieuw.equals("Ja"))

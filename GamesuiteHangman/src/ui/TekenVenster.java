@@ -32,12 +32,15 @@ public class TekenVenster extends Canvas {
 
 	private static final long serialVersionUID = 1L;
 	private Tekening tekening = null;
+	private int aantalFout;
 
 	public TekenVenster(Tekening tekening) {
 		this.setPreferredSize(new Dimension(400, 400));
 		setTekening(tekening);
 	}
-
+	public void raiseAantalFout(){
+		this.aantalFout++;
+	}
 	private void setTekening(Tekening tekening) {
 		if (tekening == null)
 			throw new UiException("Tekening mag niet null zijn");
@@ -53,8 +56,8 @@ public class TekenVenster extends Canvas {
 		Graphics2D graphics2D = (Graphics2D) graphics;
 		graphics2D.setStroke(new BasicStroke(5));
 		
-		for(Vorm v : tekening.getVormLijst()){
-			v.teken(graphics);
+		for(int i = 0; i < aantalFout; i++){
+			tekening.getVorm(i).teken(graphics);
 		}
 	}
 }
