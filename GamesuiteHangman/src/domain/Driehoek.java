@@ -110,7 +110,11 @@ public class Driehoek extends Vorm implements Drawable{
 
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
+		if(isZichtbaar()){
+			graphics.drawLine(punt1.getX(), punt1.getY(), punt2.getX(), punt2.getY());
+			graphics.drawLine(punt2.getX(), punt2.getY(), punt3.getX(), punt3.getY());
+			graphics.drawLine(punt3.getX(), punt3.getY(), punt1.getX(), punt1.getY());
+		}
 		
 	}
 }

@@ -85,7 +85,7 @@ public class LijnStuk extends Vorm implements Drawable {
 	}
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
+		if(isZichtbaar()) graphics.drawLine(start.getX(), start.getY(), einde.getX(), einde.getY());
 		
 	}
 }

@@ -33,7 +33,7 @@ public class Launcher {
 			String[] games = {"HangMan", "Pictionary"};
 			String spel = JOptionPane.showInputDialog(games, "Welk spel wil je spelen?");
 			if(spel.equals("HangMan"))
-				HangManUi.play();
+				HangManUI.play();
 			else
 				PictionaryUi.play();
 			
