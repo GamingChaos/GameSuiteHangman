@@ -16,4 +16,9 @@ package domain;
 
 public abstract class  Vorm implements Drawable {
 	public abstract Omhullende getOmhullende();
+	public boolean isZichtbaar(){
+		//niet af
+		boolean temp = true;
+		return temp;
+	}
 }
