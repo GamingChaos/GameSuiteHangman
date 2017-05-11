@@ -14,6 +14,8 @@
 
 package domain;
 
+import java.awt.Graphics;
+
 public class Driehoek extends Vorm implements Drawable{
 	//Maak variabelen voor cirkel
 	private Punt punt1, punt2, punt3;
@@ -104,5 +106,11 @@ public class Driehoek extends Vorm implements Drawable{
 			return punt2.getY();
 		
 		return punt3.getY();
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 }

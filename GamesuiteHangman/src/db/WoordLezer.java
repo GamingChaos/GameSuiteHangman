@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
 * Hangmang Game
+=======
+* Hangmang Game 
+>>>>>>> 3ef0e5e77a517960e42ea73fde80ff021d464476
 * *
 * @author  JanRomo
 * @author  bramdeman1
@@ -21,6 +25,7 @@ import java.util.Scanner;
 import domain.WoordenLijst;
 
 public class WoordLezer {
+<<<<<<< HEAD
  void woordenLezer(String bestand)throws FileNotFoundException{
 		
 		File hangmanWoorden = new File("hangman.txt");
@@ -37,4 +42,23 @@ public class WoordLezer {
  
  
 
+=======
+	private WoordenLijst lijst;
+	
+	public WoordLezer(String bestand) throws FileNotFoundException
+	{
+		Scanner s = new Scanner(new File("hangman.txt"));
+		lijst = new WoordenLijst();
+		
+		while(s.hasNext())
+			lijst.voegToe(s.nextLine());
+		
+		s.close();
+	}
+	
+	public WoordenLijst lees()
+	{
+		return lijst;
+	}
+>>>>>>> 3ef0e5e77a517960e42ea73fde80ff021d464476
 }

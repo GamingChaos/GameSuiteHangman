@@ -1,5 +1,9 @@
 /**
+<<<<<<< HEAD
 * Hangmang Game
+=======
+* Hangmang Game 
+>>>>>>> 3ef0e5e77a517960e42ea73fde80ff021d464476
 * *
 * @author  JanRomo
 * @author  bramdeman1
