@@ -99,7 +99,6 @@ public class HangManUi {
 			if(geraden){
 				vorigeRonde = 1;
 				i--;
-				letters.add(letterString);
 			}
 			else
 				vorigeRonde = 2;
