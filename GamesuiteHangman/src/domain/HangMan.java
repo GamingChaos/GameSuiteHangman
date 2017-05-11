@@ -16,9 +16,15 @@ package domain;
 public class HangMan {
 	private Speler speler;
 	private WoordenLijst woordenlijst;
+	private Tekening tekening;
 	public HangMan(Speler speler, WoordenLijst woordenlijst){
 		this.setSpeler(speler);
 		this.setWoordenlijst(woordenlijst);
+		this.setTekening(tekening);
+	}
+	private void setTekening(Tekening tekening) {
+		this.tekening = tekening;
+		
 	}
 	public WoordenLijst getWoordenlijst() {
 		return woordenlijst;
@@ -37,13 +43,12 @@ public class HangMan {
 	//TODO: Maak klasse
 
 	public Object getSpeler() {
-		// TODO Auto-generated method stub
-		return null;
+	 return this.getSpeler();
 	}
 
 	public Tekening getTekening() {
 		// TODO Auto-generated method stub
-		return null;
+		return tekening;
 	}
 	public boolean isGameOver() {
 		// TODO Auto-generated method stub
