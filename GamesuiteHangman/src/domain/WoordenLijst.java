@@ -23,8 +23,8 @@ public class WoordenLijst {
 		woordenLijst = new ArrayList<>();
 	}
 	public void voegToe(String woord){
-		if(woord == null || woord.trim().isEmpty())throw new DomainException("woord mag niet leeg zijn of null!");
 		if(woordenLijst.contains(woord))throw new DomainException("woord mag niet twee keer voorkomen!");
+		if(woord == null || woord.trim().isEmpty())throw new DomainException("woord mag niet leeg zijn of null!");
 		woordenLijst.add(woord);
 	}
 	
