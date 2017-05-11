@@ -29,6 +29,14 @@ public class Launcher {
 			String naam = JOptionPane.showInputDialog("Welkom! \nHoe heet je?");
 			Speler speler = new Speler(naam);
 			
+			//Wat wil je spelen?
+			String[] games = {"HangMan", "Pictionary"};
+			String spel = JOptionPane.showInputDialog(games, "Welk spel wil je spelen?");
+			if(spel.equals("HangMan"))
+				HangManUi.play();
+			else
+				PictionaryUi.play();
+			
 			//Maak punt aan
 			int x = Integer.parseInt(JOptionPane.showInputDialog("x coordinaat van het punt:"));
 			int y = Integer.parseInt(JOptionPane.showInputDialog("y coordinaat van het punt:"));

@@ -14,6 +14,8 @@
 
 package ui;
 
-public class PictionaryUI {
-	//TODO: Maak klasse
+public class PictionaryUi {
+	public static void play(){
+		System.exit(0);
+	}
 }

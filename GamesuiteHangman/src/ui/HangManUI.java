@@ -32,39 +32,39 @@ public class HangManUI {
 			String letterString;
 			switch(vorigeRonde){
 				case 0: 
-					letterString = JOptionPane.showInputDialog("Rarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+					letterString = JOptionPane.showInputDialog("Rarara, welk woord zoeken we? \n" + woord.toString() + "\nGeef een letter:");
 					if(letterString.length() == 1)
 						break;
 					else{
 						boolean goeieGok = false;
 						while(goeieGok == false){
-							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! \nRarara, welk woord zoeken we? \n" + woord.toString() + "\nGeef een letter:");
 							if(letterString.length() == 1)
 								goeieGok = true;
 						}
 					}
 					break;
 				case 1:
-					letterString = JOptionPane.showInputDialog("Goeie gok! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+					letterString = JOptionPane.showInputDialog("Goeie gok! \nRarara, welk woord zoeken we? \n" + woord.toString() + "\nGeef een letter:");
 					if(letterString.length() == 1)
 						break;
 					else{
 						boolean goeieGok = false;
 						while(goeieGok == false){
-							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! \nRarara, welk woord zoeken we? \n" + woord.toString() + "\nGeef een letter:");
 							if(letterString.length() == 1)
 								goeieGok = true;
 						}
 					}
 					break;
 				case 2:
-					letterString = JOptionPane.showInputDialog("Rarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+					letterString = JOptionPane.showInputDialog("Rarara, welk woord zoeken we? \n" + woord.toString() + "\nGeef een letter:");
 					if(letterString.length() == 1)
 						break;
 					else{
 						boolean goeieGok = false;
 						while(goeieGok == false){
-							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! \nRarara, welk woord zoeken we? \n" + woord.toString() + "\nGeef een letter:");
 							if(letterString.length() == 1)
 								goeieGok = true;
 						}
@@ -80,7 +80,7 @@ public class HangManUI {
 		}
 		
 		String[] jaNee = {"Ja", "Nee"};
-		String opnieuw = JOptionPane.showInputDialog(jaNee, "Gefeliciteerd! U heeft gewonnen! /nWilt u nog eens spelen?");
+		String opnieuw = JOptionPane.showInputDialog(jaNee, "Gefeliciteerd! U heeft gewonnen! \nWilt u nog eens spelen?");
 		if(opnieuw.equals("Ja"))
 			play();
 		else
