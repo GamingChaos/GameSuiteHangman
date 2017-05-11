@@ -48,7 +48,7 @@ public class Launcher {
 				//stoppen
 				break;
 			case 1:
-				Vorm vorm = new Vorm(JOptionPane.showInputDialog("Welke vorm wil je maken?"));
+				//vorm maken
 				break;
 			case 2:
 				//tekening tonen
