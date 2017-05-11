@@ -83,7 +83,13 @@ public class Rechthoek extends Vorm implements Drawable{
 
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
+		if(isZichtbaar()){
+			graphics.drawLine(hoek.getX(), hoek.getY(), hoek.getX()+breedte, hoek.getY());
+			graphics.drawLine(hoek.getX(), hoek.getY(), hoek.getX(), hoek.getY()-hoogte);
+			graphics.drawLine(hoek.getX()+breedte, hoek.getY(), hoek.getX()+breedte, hoek.getY()-hoogte);
+			graphics.drawLine(hoek.getX(), hoek.getY()-hoogte, hoek.getX()+breedte, hoek.getY()-hoogte);
+		}
+		
 		
 	}
 }

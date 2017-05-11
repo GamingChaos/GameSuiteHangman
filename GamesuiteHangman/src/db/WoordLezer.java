@@ -44,20 +44,22 @@ public class WoordLezer {
 
 
 	private WoordenLijst lijst;
+	private String bestand;
 	
-	public WoordLezer(String bestand) throws FileNotFoundException
+	public WoordLezer(String bestand) 
 	{
-		Scanner s = new Scanner(new File("hangman.txt"));
+		this.bestand = bestand;
+	}
+	
+	public WoordenLijst lees() throws FileNotFoundException
+	{
+		Scanner s = new Scanner(new File(bestand));
 		lijst = new WoordenLijst();
 		
 		while(s.hasNext())
 			lijst.voegToe(s.nextLine());
 		
 		s.close();
-	}
-	
-	public WoordenLijst lees()
-	{
 		return lijst;
 	}
 

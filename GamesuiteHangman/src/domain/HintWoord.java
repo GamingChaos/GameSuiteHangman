@@ -62,7 +62,7 @@ public class HintWoord {
 			if(h.isGeraden() == true)
 				result += h.getLetter();
 			else
-				result += "_";
+				result += " _ ";
 		}
 		return result;
 	}

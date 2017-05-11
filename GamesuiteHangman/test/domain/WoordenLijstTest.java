@@ -2,17 +2,13 @@ package domain;
 
 import static org.junit.Assert.*;
 
-
 import java.io.FileNotFoundException;
-
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
-
 import db.WoordLezer;
-
 
 public class WoordenLijstTest {
 	
@@ -69,18 +65,19 @@ public class WoordenLijstTest {
 
 		woordenlijstMetGeldigeWoorden.voegToe(woordAlInLijst);
 	}
-
 	
 	@Test
-	public void test()
+	public void WoordenLijst_getRandomWoord_geeft_null_als_lijst_leeg_is()
 	{
-		try {
-			WoordenLijst lijst = new WoordenLijst();
-			WoordLezer lezer = new WoordLezer("");
-			assertEquals(12, lijst.getAantalWoorden());
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		WoordenLijst w = new WoordenLijst();
+		assertEquals(null, w.getRandomWoord());
 	}
-
+	
+	@Test
+	public void WoordenLijst_getRandomWoord_geet_eerste_element_als_lijst_size_1()
+	{
+		WoordenLijst w = new WoordenLijst();
+		w.voegToe("test");
+		assertEquals("test", w.getRandomWoord());
+	}	
 }

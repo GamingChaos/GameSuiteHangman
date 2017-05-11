@@ -89,7 +89,10 @@ public class Cirkel extends Vorm implements Drawable{
 
 	@Override
 	public void teken(Graphics graphics) {
-		// TODO Auto-generated method stub
+		if(isZichtbaar()){
+			graphics.fillOval(getMiddelpunt().getX()-getRadius(), 
+					getMiddelpunt().getY()-getRadius(), 2*getRadius(), 2*getRadius());
+		}
 		
 	}
 }

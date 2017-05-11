@@ -17,9 +17,12 @@ package domain;
 import java.util.ArrayList;
 import java.util.Random;
 
+import db.WoordLezer;
+
 public class WoordenLijst {
 	private ArrayList<String> woordenLijst = new ArrayList<>(); 
 	
+	//voorbeeld maken woorden lijst met txt bestand : WoordenLijst l = new WoordLezer("hangman.txt").lees();
 	public WoordenLijst(){
 		woordenLijst = new ArrayList<>();
 	}
