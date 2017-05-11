@@ -13,53 +13,58 @@
 */
 package domain;
 
+import ui.TekeningHangMan;
+
 public class HangMan {
 	private Speler speler;
 	private WoordenLijst woordenlijst;
-	private Tekening tekening;
-	public HangMan(Speler speler, WoordenLijst woordenlijst){
-		this.setSpeler(speler);
-		this.setWoordenlijst(woordenlijst);
-		this.setTekening(tekening);
-	}
-	private void setTekening(Tekening tekening) {
-		this.tekening = tekening;
-		
+	private TekeningHangMan tekening;
+	private HintWoord woord;
+	private boolean gewonnen;
+	
+	public HangMan(Speler speler, WoordenLijst woordenlijst) throws Exception{
+		try{
+			setSpeler(speler);
+			setWoordenlijst(woordenlijst);
+			tekening = new TekeningHangMan();
+			woord = new HintWoord(woordenlijst.getRandomWoord());
+			this.gewonnen = false;
+		}
+		catch(IllegalArgumentException iae){
+			throw new DomainException(iae);
+		}
 	}
 	public WoordenLijst getWoordenlijst() {
 		return woordenlijst;
 	}
 	private void setWoordenlijst(WoordenLijst woordenlijst) {
+		if(woordenlijst == null)
+			throw new IllegalArgumentException("geef een geldige woordenlijst");
 		this.woordenlijst = woordenlijst;
 	}
 	private void setSpeler(Speler speler) {
-		if(speler == null) throw new DomainException("Speler mag niet leeg zijn");
+		if(speler == null) 
+			throw new IllegalArgumentException("Speler mag niet leeg zijn");
 		this.speler = speler;
 	}
 	public String getHint() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.woord.toString();
 	}
-	//TODO: Maak klasse
 
 	public Object getSpeler() {
-	 return this.getSpeler();
+		return this.speler;
 	}
 
-	public Tekening getTekening() {
-		// TODO Auto-generated method stub
-		return tekening;
-	}
-	public boolean isGameOver() {
-		// TODO Auto-generated method stub
-		return false;
+	public TekeningHangMan getTekening() {
+		return this.tekening;
 	}
 	public boolean isGewonnen() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.gewonnen;
 	}
-	public void raad(char letter) {
-		// TODO Auto-generated method stub
-		
+	public boolean isGameOver() {
+		return !gewonnen;
+	}
+	public boolean raad(char letter) {
+		return this.woord.raad(letter);		
 	}
 }
