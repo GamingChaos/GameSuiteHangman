@@ -16,8 +16,21 @@ package ui;
 
 import javax.swing.JOptionPane;
 import domain.HintWoord;
+import domain.Speler;
+import domain.Tekening;
 
 public class HangManUi {
+	private Tekening tekening;
+	private Speler speler;
+	
+	public HangManUi(Speler speler){
+		this.tekening = new Tekening(speler.getNaam());
+		GameMainWindow view = new GameMainWindow(speler.getNaam(), tekening);
+		view.setVisible(true);
+		view.teken();
+		play();
+	}
+	
 	public static void play(){
 		HintWoord woord;
 		try {

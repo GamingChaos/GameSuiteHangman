@@ -14,7 +14,20 @@
 
 package ui;
 
+import domain.Speler;
+import domain.Tekening;
+
 public class PictionaryUi {
+	private Tekening tekening;
+	private Speler speler;
+	
+	public PictionaryUi(Speler speler){
+		tekening = new Tekening(speler.getNaam());
+		GameMainWindow view = new GameMainWindow(speler.getNaam(), tekening);
+		view.setVisible(true);
+		view.teken();
+		play();
+	}
 	public static void play(){
 		System.exit(0);
 	}
