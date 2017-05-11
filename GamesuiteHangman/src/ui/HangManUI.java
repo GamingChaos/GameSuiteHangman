@@ -79,6 +79,12 @@ public class HangManUi {
 				vorigeRonde = 2;
 		}
 		
-		
+		String[] jaNee = {"Ja", "Nee"};
+		String opnieuw = JOptionPane.showInputDialog(jaNee, "Gefeliciteerd! U heeft gewonnen! /nWilt u nog eens spelen?");
+		if(opnieuw.equals("Ja"))
+			play();
+		else
+			System.out.println("goed gespeeld, gefeliciteerd!");
+			System.exit(0);
 	}
 }
