@@ -15,7 +15,6 @@ public class HangManTest {
 	@Before
 	public void setUp() throws Exception {
 		geldigeSpeler = new Speler("naam");
-
 		geldigeWoordenlijst = new WoordenLijst();
 		geldigeWoordenlijst.voegToe("test");
 		
@@ -36,6 +35,7 @@ public class HangManTest {
 	
 	@Test (expected = DomainException.class)
 	public void HangMan_moet_een_exception_gooien_als_gegeven_speler_null() {
+	
 		hangman = new HangMan(null, geldigeWoordenlijst);
 	}
 	

@@ -14,6 +14,7 @@
 
 package domain;
 
+import java.awt.Graphics;
 
 public class Rechthoek extends Vorm implements Drawable{
 	//Maak variabelen voor Rechthoek
@@ -78,5 +79,11 @@ public class Rechthoek extends Vorm implements Drawable{
 	@Override
 	public Omhullende getOmhullende() {
 		return new Omhullende(hoek, breedte, hoogte);
+	}
+
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 }

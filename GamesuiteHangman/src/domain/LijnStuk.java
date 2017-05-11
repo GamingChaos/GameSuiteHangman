@@ -14,6 +14,8 @@
 
 package domain;
 
+import java.awt.Graphics;
+
 public class LijnStuk extends Vorm implements Drawable {
 	//Maak variabelen voor Lijnstuk
 	private Punt start, einde;
@@ -80,5 +82,10 @@ public class LijnStuk extends Vorm implements Drawable {
 	private int maxY()
 	{
 		return start.getY() > einde.getY() ? start.getY() : einde.getY();
+	}
+	@Override
+	public void teken(Graphics graphics) {
+		// TODO Auto-generated method stub
+		
 	}
 }
