@@ -28,7 +28,7 @@ public class HangManUi {
 		}
 		
 		int vorigeRonde = 0;
-		while(woord.isGeraden() == false){
+		for(int i = 0; i < 10; i++){
 			String letterString;
 			switch(vorigeRonde){
 				case 0: 
@@ -72,19 +72,29 @@ public class HangManUi {
 					break;
 					default: throw new UiException("Default exception at SwitchCase in playfunction");
 			}
+			if(woord.isGeraden()){
+				String[] jaNee = {"Ja", "Nee"};
+				String opnieuw = JOptionPane.showInputDialog(jaNee, "Gefeliciteerd! U heeft gewonnen! \nWilt u nog eens spelen?");
+				if(opnieuw.equals("Ja"))
+					play();
+				else{
+					System.out.println("goed gespeeld, gefeliciteerd!");
+					System.exit(0);
+				}
+			}
 			boolean geraden = woord.raad(letterString.charAt(0));
 			if(geraden)
 				vorigeRonde = 1;
 			else
 				vorigeRonde = 2;
 		}
-		
 		String[] jaNee = {"Ja", "Nee"};
-		String opnieuw = JOptionPane.showInputDialog(jaNee, "Gefeliciteerd! U heeft gewonnen! \nWilt u nog eens spelen?");
+		String opnieuw = JOptionPane.showInputDialog(jaNee, "Jammer! U heeft Verloren! \nWilt u nog eens spelen?");
 		if(opnieuw.equals("Ja"))
 			play();
-		else
-			System.out.println("goed gespeeld, gefeliciteerd!");
+		else{
+			System.out.println("Volgende keer beter");
 			System.exit(0);
+		}
 	}
 }
