@@ -18,5 +18,67 @@ import javax.swing.JOptionPane;
 import domain.HintWoord;
 
 public class HangManUi {
-	
+	public static void play(){
+		HintWoord woord;
+		try {
+			woord = new HintWoord("krokodil");
+		} 
+		catch (Exception e){
+			throw new UiException(e);
+		}
+		
+		int vorigeRonde = 0;
+		while(woord.isGeraden() == false){
+			String letterString;
+			switch(vorigeRonde){
+				case 0: 
+					letterString = JOptionPane.showInputDialog("Rarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+					if(letterString.length() == 1)
+						break;
+					else{
+						boolean goeieGok = false;
+						while(goeieGok == false){
+							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+							if(letterString.length() == 1)
+								goeieGok = true;
+						}
+					}
+					break;
+				case 1:
+					letterString = JOptionPane.showInputDialog("Goeie gok! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+					if(letterString.length() == 1)
+						break;
+					else{
+						boolean goeieGok = false;
+						while(goeieGok == false){
+							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+							if(letterString.length() == 1)
+								goeieGok = true;
+						}
+					}
+					break;
+				case 2:
+					letterString = JOptionPane.showInputDialog("Rarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+					if(letterString.length() == 1)
+						break;
+					else{
+						boolean goeieGok = false;
+						while(goeieGok == false){
+							letterString = JOptionPane.showInputDialog("We zoeken een LETTER! /nRarara, welk woord zoeken we? /n" + woord.toString() + "/nGeef een letter:");
+							if(letterString.length() == 1)
+								goeieGok = true;
+						}
+					}
+					break;
+					default: throw new UiException("Default exception at SwitchCase in playfunction");
+			}
+			boolean geraden = woord.raad(letterString.charAt(0));
+			if(geraden)
+				vorigeRonde = 1;
+			else
+				vorigeRonde = 2;
+		}
+		
+		
+	}
 }

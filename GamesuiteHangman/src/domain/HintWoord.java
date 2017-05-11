@@ -57,7 +57,14 @@ public class HintWoord {
 	}
 	
 	public String toString(){
-		return woordString;
+		String result = "";
+		for(HintLetter h : letterLijst){
+			if(h.isGeraden() == true)
+				result += h.getLetter();
+			else
+				result += "_";
+		}
+		return result;
 	}
 	
 	private void addLetter(String woord) throws Exception{
