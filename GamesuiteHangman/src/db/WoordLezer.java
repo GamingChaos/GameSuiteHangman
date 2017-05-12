@@ -23,7 +23,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import domain.WoordenLijst;
-
+//juiste versie
 public class WoordLezer {
 
  void woordenLezer(String bestand)throws FileNotFoundException{
