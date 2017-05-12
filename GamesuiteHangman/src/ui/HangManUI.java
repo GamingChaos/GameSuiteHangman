@@ -31,13 +31,13 @@ import domain.Tekening;
 import domain.TekeningHangMan;
 import domain.WoordenLijst;
 
-public class HangManUi {
+public class HangManUI {
 	private Tekening tekening;
 	private Speler speler;
 	private ArrayList<String> letters;
 	private GameMainWindow view;
 	
-	public HangManUi(Speler speler){
+	public HangManUI(Speler speler){
 		this.tekening = new TekeningHangMan(speler.getNaam());
 		letters = new ArrayList<String>();
 		view = new GameMainWindow(speler.getNaam(), tekening);
