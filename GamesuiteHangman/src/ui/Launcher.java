@@ -37,7 +37,7 @@ public class Launcher {
 			
 			//Wat wil je spelen?
 			String[] games = {"HangMan", "Pictionary"};
-			String spel = JOptionPane.showInputDialog(games, "Welk spel wil je spelen?");
+			String spel = (String) JOptionPane.showInputDialog(null, "Welk spel wil je spelen?", "Super Awesome Mega Game", JOptionPane.QUESTION_MESSAGE, null, games, games[0]);
 			switch(spel){
 			case "HangMan":
 				HangManUi hangui = new HangManUi(speler);
