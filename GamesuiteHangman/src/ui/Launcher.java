@@ -40,10 +40,10 @@ public class Launcher {
 			String spel = (String) JOptionPane.showInputDialog(null, "Welk spel wil je spelen?", "Super Awesome Mega Game", JOptionPane.QUESTION_MESSAGE, null, games, games[0]);
 			switch(spel){
 			case "HangMan":
-				HangManUI hangui = new HangManUI(speler);
+				HangManUi hangui = new HangManUi(speler);
 				break;
 			case "Pictionary":
-				PictionaryUI picui = new PictionaryUI(speler);
+				PictionaryUi picui = new PictionaryUi(speler);
 				break;
 			default: throw new IllegalArgumentException("typ de naam van het spel juist");
 			}

@@ -54,7 +54,7 @@ public class HangManTest {
 	// De testen voor wat er gebeurt als je een foutieve letter (null, leeg, meer dan 1 karakter) 
 	// meegeeft, worden hier niet herhaald, die zitten al in de HintWoordTest	
 	@Test
-	public void raad_moet_volgende_zichtbaar_zetten_indien_fout_geraden(){
+	public void raad_moet_volgende_zichtbaar_zetten_indien_fout_geraden() throws Exception{
 		hangman = new HangMan(geldigeSpeler, woordenlijstMetEnkelWoordTest);
 		char letter = 'a';
 		assertEquals(14, hangman.getTekening().getAantalOnzichtbaar());
@@ -66,7 +66,7 @@ public class HangManTest {
 	}
 	
 	@Test
-	public void raad_mag_volgende_niet_zichtbaar_zetten_indien_juist_geraden(){
+	public void raad_mag_volgende_niet_zichtbaar_zetten_indien_juist_geraden() throws Exception{
 		hangman = new HangMan(geldigeSpeler, woordenlijstMetEnkelWoordTest);
 		char letter = 'e';
 		assertEquals(14, hangman.getTekening().getAantalOnzichtbaar());
@@ -78,7 +78,7 @@ public class HangManTest {
 	}
 	
 	@Test
-	public void raad_mag_volgende_niet_zichtbaar_zetten_en_gewonnen_op_true_als_laatste_letter_juist_geraden(){
+	public void raad_mag_volgende_niet_zichtbaar_zetten_en_gewonnen_op_true_als_laatste_letter_juist_geraden() throws Exception{
 		HangMan hangmanOp1NaGeraden = new HangMan(geldigeSpeler, woordenlijstMetEnkelWoordTest);
 		hangmanOp1NaGeraden.raad('t');
 		hangmanOp1NaGeraden.raad('e');
@@ -91,7 +91,7 @@ public class HangManTest {
 	}
 	
 	@Test
-	public void raad_moet_volledige_afbeelding_zichtbaar_zetten_en_gameover_op_true_als_laatste_kans_fout_geraden(){
+	public void raad_moet_volledige_afbeelding_zichtbaar_zetten_en_gameover_op_true_als_laatste_kans_fout_geraden() throws Exception{
 		HangMan hangmanNietGeradenEn13FouteAntwoorden = new HangMan(geldigeSpeler, woordenlijstMetEnkelWoordTest);
 		for(int i = 0; i < 13; i++){
 			hangmanNietGeradenEn13FouteAntwoorden.raad('a');
