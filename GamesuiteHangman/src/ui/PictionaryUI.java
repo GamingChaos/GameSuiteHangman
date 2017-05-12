@@ -13,7 +13,7 @@
 */
 
 package ui;
-
+//PictionaryUI
 import domain.Speler;
 import domain.Tekening;
 
