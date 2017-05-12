@@ -17,11 +17,11 @@ package ui;
 import domain.Speler;
 import domain.Tekening;
 
-public class PictionaryUi {
+public class PictionaryUI {
 	private Tekening tekening;
 	private Speler speler;
 	
-	public PictionaryUi(Speler speler){
+	public PictionaryUI(Speler speler){
 		tekening = new Tekening(speler.getNaam());
 		GameMainWindow view = new GameMainWindow(speler.getNaam(), tekening);
 		view.setVisible(true);
