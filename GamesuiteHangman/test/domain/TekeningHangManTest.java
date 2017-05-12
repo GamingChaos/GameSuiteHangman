@@ -8,7 +8,7 @@ import org.junit.Test;
 import junit.framework.Assert;
 
 public class TekeningHangManTest {
-	private TekeningHangMan tekening = new TekeningHangMan();
+	private TekeningHangMan tekening = new TekeningHangMan("test");
 	private Vorm bla = new Rechthoek(new Punt(10, 350), 300, 40);
 
 	private Vorm galgBodem = new Rechthoek(new Punt(10, 350), 300, 40);

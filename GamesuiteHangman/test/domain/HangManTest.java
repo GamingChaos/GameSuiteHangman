@@ -25,7 +25,7 @@ public class HangManTest {
 	}
 
 	@Test
-	public void HangMan_moet_een_HangMan_spel_maken_en_initialiseren_voor_de_gegeven_speler_met_de_gegeven_woordenlijst() {
+	public void HangMan_moet_een_HangMan_spel_maken_en_initialiseren_voor_de_gegeven_speler_met_de_gegeven_woordenlijst() throws Exception {
 		hangman = new HangMan(geldigeSpeler, woordenlijstMetEnkelWoordTest);
 		assertEquals(geldigeSpeler, hangman.getSpeler());
 		assertFalse(hangman.isGameOver());
@@ -34,18 +34,18 @@ public class HangManTest {
 	}
 	
 	@Test (expected = DomainException.class)
-	public void HangMan_moet_een_exception_gooien_als_gegeven_speler_null() {
+	public void HangMan_moet_een_exception_gooien_als_gegeven_speler_null() throws Exception {
 	
 		hangman = new HangMan(null, geldigeWoordenlijst);
 	}
 	
 	@Test (expected = DomainException.class)
-	public void HangMan_moet_een_exception_gooien_als_gegeven_woordenlijst_null() {
+	public void HangMan_moet_een_exception_gooien_als_gegeven_woordenlijst_null() throws Exception {
 		hangman = new HangMan(geldigeSpeler, null);
 	}
 	
 	@Test (expected = DomainException.class)
-	public void HangMan_moet_een_exception_gooien_als_gegeven_woordenlijst_leeg() {
+	public void HangMan_moet_een_exception_gooien_als_gegeven_woordenlijst_leeg() throws Exception {
 		WoordenLijst legeWoordenlijst = new WoordenLijst();
 		assertEquals(0, legeWoordenlijst.getAantalWoorden());
 		hangman = new HangMan(geldigeSpeler, legeWoordenlijst);
