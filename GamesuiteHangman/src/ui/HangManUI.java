@@ -40,6 +40,7 @@ public class HangManUi {
 	public HangManUi(Speler speler){
 		this.tekening = new TekeningHangMan(speler.getNaam());
 		letters = new ArrayList<String>();
+		this.speler = speler;
 		view = new GameMainWindow(speler.getNaam(), tekening);
 		view.setVisible(true);
 		view.teken();
