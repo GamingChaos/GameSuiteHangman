@@ -28,6 +28,7 @@ import db.WoordLezer;
 import domain.HintWoord;
 import domain.Speler;
 import domain.Tekening;
+import domain.TekeningHangMan;
 import domain.WoordenLijst;
 
 public class HangManUi {
@@ -37,7 +38,7 @@ public class HangManUi {
 	private GameMainWindow view;
 	
 	public HangManUi(Speler speler){
-		this.tekening = new Tekening(speler.getNaam());
+		this.tekening = new TekeningHangMan(speler.getNaam());
 		letters = new ArrayList<String>();
 		view = new GameMainWindow(speler.getNaam(), tekening);
 		view.setVisible(true);
