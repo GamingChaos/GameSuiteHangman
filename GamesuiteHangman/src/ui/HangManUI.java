@@ -59,7 +59,7 @@ public class HangManUi {
 		int vorigeRonde = 0;
 		int aantalFout = 0;
 		
-		while(aantalFout <= 11){
+		while(aantalFout <= 12){
 			String letterString;
 			switch(vorigeRonde){
 				case 0: 
@@ -142,8 +142,11 @@ public class HangManUi {
 				this.speler.addToScore(1);
 				String[] jaNee = {"Ja", "Nee"};
 				String opnieuw = (String) JOptionPane.showInputDialog(null, "Gefeliciteerd! U heeft gewonnen! \nWilt u nog eens spelen?", "Super Awesome Mega Game", JOptionPane.QUESTION_MESSAGE, null, jaNee, jaNee[0]);
-				if(opnieuw.equals("Ja"))
+				if(opnieuw.equals("Ja")){
+					view.resetAantalFout();
+					view.teken();
 					play();
+				}
 				else{
 					System.out.println("goed gespeeld, gefeliciteerd!");
 					System.out.println("Uw score was: " + speler.getScore());

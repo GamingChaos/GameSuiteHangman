@@ -42,7 +42,9 @@ public class TekenVenster extends Canvas {
 	public void raiseAantalFout(){
 		this.aantalFout++;
 	}
-	
+	public void resetAantalFout(){
+		this.aantalFout = 0;
+	}
 	private void setTekening(Tekening tekening) {
 		if (tekening == null) throw new UiException("Tekening mag niet null zijn");
 		

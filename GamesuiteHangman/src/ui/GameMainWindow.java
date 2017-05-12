@@ -50,7 +50,11 @@ public class GameMainWindow extends JFrame{
 	}
 	
 	public void raiseAantalFout(){
-		tekenvenster.raiseAantalFout();
+		getTekenvenster().raiseAantalFout();
+	}
+	
+	public void resetAantalFout(){
+		getTekenvenster().resetAantalFout();
 	}
 	
 	protected TekenVenster getTekenvenster() {
