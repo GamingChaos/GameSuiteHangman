@@ -24,6 +24,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
 import javax.swing.JOptionPane;
 
+import db.HighScoresWriter;
 import db.WoordLezer;
 import domain.HintWoord;
 import domain.Speler;
@@ -31,13 +32,14 @@ import domain.Tekening;
 import domain.TekeningHangMan;
 import domain.WoordenLijst;
 
-public class HangManUI {
+public class HangManUi {
 	private Tekening tekening;
 	private Speler speler;
 	private ArrayList<String> letters;
 	private GameMainWindow view;
+	private HighScoresWriter writer = new HighScoresWriter();
 	
-	public HangManUI(Speler speler){
+	public HangManUi(Speler speler){
 		this.tekening = new TekeningHangMan(speler.getNaam());
 		letters = new ArrayList<String>();
 		this.speler = speler;
@@ -45,6 +47,7 @@ public class HangManUI {
 		view.setVisible(true);
 		view.teken();
 		play();
+		
 	}
 	
 	public void play(){
@@ -125,7 +128,7 @@ public class HangManUI {
 					//info geven over soundfile
 					//haal het geluid uit soundfile
 					AudioInputStream soundFormatLenght = AudioSystem.getAudioInputStream(soundfile);
-					//zoek de lengte en het formaat soundFormatLenght, zorgt ervoor dat we kunnen starten en stoppen
+					//zoek de lengte en het formaat soundFormatLenght
 					DataLine.Info info = new DataLine.Info(Clip.class, soundFormatLenght.getFormat());
 					//zet het geluid in het geheugen 
 					//een clip = een audiobestand dat kan worden geladen voor het wordt afgespeeld
@@ -162,6 +165,7 @@ public class HangManUI {
 		else{
 			System.out.println("Volgende keer beter");
 			System.out.println("Uw score was: " + speler.getScore());
+			writer.writeHighScore(speler.getNaam() + "/" + speler.getScore());
 			System.exit(0);
 		}
 	}
