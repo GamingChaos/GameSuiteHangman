@@ -40,7 +40,7 @@ public class Launcher {
 			String spel = (String) JOptionPane.showInputDialog(null, "Welk spel wil je spelen?", "Super Awesome Mega Game", JOptionPane.QUESTION_MESSAGE, null, games, games[0]);
 			switch(spel){
 			case "HangMan":
-				HangManUi hangui = new HangManUi(speler);
+				HangManUI hangui = new HangManUI(speler);
 				break;
 			case "Pictionary":
 				PictionaryUi picui = new PictionaryUi(speler);
