@@ -13,8 +13,6 @@
 */
 package domain;
 
-import ui.TekeningHangMan;
-
 public class HangMan {
 	private Speler speler;
 	private WoordenLijst woordenlijst;
@@ -26,7 +24,7 @@ public class HangMan {
 		try{
 			setSpeler(speler);
 			setWoordenlijst(woordenlijst);
-			tekening = new TekeningHangMan();
+			tekening = new TekeningHangMan(speler.getNaam());
 			woord = new HintWoord(woordenlijst.getRandomWoord());
 			this.gewonnen = false;
 		}

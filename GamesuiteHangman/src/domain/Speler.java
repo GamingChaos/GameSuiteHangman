@@ -15,7 +15,7 @@
 package domain;
 
 public class Speler {
-	//Maak variavbelen voor Speler
+	//Maak variabelen voor Speler
 	private String naam;
 	private int score = 0;
 	//Speler constructor met gegeven naam

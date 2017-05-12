@@ -28,6 +28,7 @@ import db.WoordLezer;
 import domain.HintWoord;
 import domain.Speler;
 import domain.Tekening;
+import domain.TekeningHangMan;
 import domain.WoordenLijst;
 
 public class HangManUi {
@@ -37,7 +38,7 @@ public class HangManUi {
 	private GameMainWindow view;
 	
 	public HangManUi(Speler speler){
-		this.tekening = new Tekening(speler.getNaam());
+		this.tekening = new TekeningHangMan(speler.getNaam());
 		letters = new ArrayList<String>();
 		view = new GameMainWindow(speler.getNaam(), tekening);
 		view.setVisible(true);
@@ -140,7 +141,7 @@ public class HangManUi {
 				
 				this.speler.addToScore(1);
 				String[] jaNee = {"Ja", "Nee"};
-				String opnieuw = JOptionPane.showInputDialog(jaNee, "Gefeliciteerd! U heeft gewonnen! \nWilt u nog eens spelen?");
+				String opnieuw = (String) JOptionPane.showInputDialog(null, "Gefeliciteerd! U heeft gewonnen! \nWilt u nog eens spelen?", "Super Awesome Mega Game", JOptionPane.QUESTION_MESSAGE, null, jaNee, jaNee[0]);
 				if(opnieuw.equals("Ja"))
 					play();
 				else{
@@ -151,7 +152,7 @@ public class HangManUi {
 			}
 		}
 		String[] jaNee = {"Ja", "Nee"};
-		String opnieuw = JOptionPane.showInputDialog(jaNee, "Jammer! U heeft Verloren!\nHet juiste woord was "+woord.getWoord() + "\nWilt u nog eens spelen?");
+		String opnieuw = (String) JOptionPane.showInputDialog(null, "Jammer! U heeft verloren! \nWilt u nog eens spelen?", "Super Awesome Mega Game", JOptionPane.QUESTION_MESSAGE, null, jaNee, jaNee[0]);
 		if(opnieuw.equals("Ja"))
 			play();
 		else{
