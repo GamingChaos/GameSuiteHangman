@@ -19,7 +19,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ PuntTest.class, SpelerTest.class, CirkelTest.class, RechthoekTest.class, LijnStukTest.class, HintLetterTest.class, HintWoordTest.class, TekeningTest.class, LijnStukTest.class, OmhullendeTest.class, WoordenLijst.class })
+@SuiteClasses({ PuntTest.class, SpelerTest.class, CirkelTest.class, RechthoekTest.class, LijnStukTest.class, HintLetterTest.class, HintWoordTest.class, TekeningTest.class, LijnStukTest.class, OmhullendeTest.class, WoordenLijstTest.class })
 public class AllTests {
 
 }

@@ -42,13 +42,15 @@ public class Driehoek extends Vorm implements Drawable{
 	public Punt getHoekPunt1(){
 		return punt1;
 	}
+	
 	public Punt getHoekPunt2(){
-		return punt2;
-		
+		return punt2;	
 	}
+	
 	public Punt getHoekPunt3(){
 		return punt3;
 	}
+	
 	@Override
 	public boolean equals(Object o){
 		if(o instanceof Driehoek){
@@ -60,6 +62,7 @@ public class Driehoek extends Vorm implements Drawable{
 		}
 		return false;
 	}
+	
 	@Override
 	public String toString(){
 		return "Driehoek: hoekpunt1: " + getHoekPunt1().toString() + " - hoekpunt2: " + getHoekPunt2().toString() + " - hoekpunt3: " + getHoekPunt3().toString(); 
@@ -115,6 +118,5 @@ public class Driehoek extends Vorm implements Drawable{
 			graphics.drawLine(punt2.getX(), punt2.getY(), punt3.getX(), punt3.getY());
 			graphics.drawLine(punt3.getX(), punt3.getY(), punt1.getX(), punt1.getY());
 		}
-		
 	}
 }

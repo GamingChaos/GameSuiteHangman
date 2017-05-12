@@ -34,7 +34,6 @@ public class WoordenLijst {
 		woordenLijst.add(woord);
 	}
 	
-	
 	public String getRandomWoord(){
 		Random random = new Random();
 		
@@ -49,7 +48,6 @@ public class WoordenLijst {
 	}
 	
 	public int getAantalWoorden(){
-		return woordenLijst.size();
-		
+		return woordenLijst.size();	
 	}
 }

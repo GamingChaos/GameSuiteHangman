@@ -26,7 +26,6 @@ import domain.Tekening;
 public class GameMainWindow extends JFrame{
 
 	private static final long serialVersionUID = 1L;
-	
 	private TekenVenster tekenvenster;
 
 	public GameMainWindow(String titel, Tekening tekening){
@@ -49,7 +48,11 @@ public class GameMainWindow extends JFrame{
 	public void teken(){
 		getTekenvenster().teken();
 	}
-
+	
+	public void raiseAantalFout(){
+		tekenvenster.raiseAantalFout();
+	}
+	
 	protected TekenVenster getTekenvenster() {
 		return tekenvenster;
 	}

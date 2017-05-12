@@ -62,11 +62,6 @@ public class HintWoordTest {
 		assertTrue(woord3.isGeraden());
 	}
 	
-	@Test
-	public void test_toString_geeft_juiste_string(){
-		assertEquals("kubbe", woord1.toString());
-	}
-	
 	public void test_get_Woord_geeft_juiste_woord(){
 		assertEquals("kubbe", woord1.getWoord());
 	}

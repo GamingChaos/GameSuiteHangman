@@ -13,8 +13,6 @@
 */
 package domain;
 
-import ui.TekeningHangMan;
-
 public class HangMan {
 	private Speler speler;
 	private WoordenLijst woordenlijst;
@@ -26,7 +24,7 @@ public class HangMan {
 		try{
 			setSpeler(speler);
 			setWoordenlijst(woordenlijst);
-			tekening = new TekeningHangMan();
+			tekening = new TekeningHangMan(speler.getNaam());
 			woord = new HintWoord(woordenlijst.getRandomWoord());
 			this.gewonnen = false;
 		}
@@ -34,19 +32,23 @@ public class HangMan {
 			throw new DomainException(iae);
 		}
 	}
+	
 	public WoordenLijst getWoordenlijst() {
 		return woordenlijst;
 	}
+	
 	private void setWoordenlijst(WoordenLijst woordenlijst) {
 		if(woordenlijst == null)
 			throw new IllegalArgumentException("geef een geldige woordenlijst");
 		this.woordenlijst = woordenlijst;
 	}
+	
 	private void setSpeler(Speler speler) {
 		if(speler == null) 
 			throw new IllegalArgumentException("Speler mag niet leeg zijn");
 		this.speler = speler;
 	}
+	
 	public String getHint() {
 		return this.woord.toString();
 	}
@@ -58,12 +60,15 @@ public class HangMan {
 	public TekeningHangMan getTekening() {
 		return this.tekening;
 	}
+	
 	public boolean isGewonnen() {
 		return this.gewonnen;
 	}
+	
 	public boolean isGameOver() {
 		return !gewonnen;
 	}
+	
 	public boolean raad(char letter) {
 		return this.woord.raad(letter);		
 	}

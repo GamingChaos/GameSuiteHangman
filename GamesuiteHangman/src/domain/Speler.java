@@ -15,7 +15,7 @@
 package domain;
 
 public class Speler {
-	//Maak variavbelen voor Speler
+	//Maak variabelen voor Speler
 	private String naam;
 	private int score = 0;
 	//Speler constructor met gegeven naam
@@ -29,14 +29,17 @@ public class Speler {
 		if(naam == null || naam.trim().isEmpty())throw new DomainException("naam mag niet leeg zijn en mag ook niet null zijn!");
 		this.naam = naam;
 	}
+	
 	//geeft naam
 	public String getNaam() {
 		return naam;
 	}
+	
 	//Geeft score
 	public int getScore() {
 		return score;
 	}
+	
 	//Voegt score toe aan bestaande score
 	public void addToScore(int positiveScore) throws DomainException {
 		if(score + positiveScore < 0) throw new DomainException("score mag geen negatief getal zijn!");
@@ -54,18 +57,14 @@ public class Speler {
 			}
 		}
 		
-		return result;
-		
+		return result;	
 	}
 	
-	
 	@Override
- public String toString(){
-	 String info;
-	 info = "naam speler: " + naam + "\n" + "score: " + score ;
+	public String toString(){
+		String info;
+		info = "naam speler: " + naam + "\n" + "score: " + score ;
 	 
-	return info;
-	 
- }
-
+		return info; 
+	}
 }
