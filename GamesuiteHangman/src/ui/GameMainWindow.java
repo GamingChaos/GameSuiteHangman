@@ -49,7 +49,9 @@ public class GameMainWindow extends JFrame{
 	public void teken(){
 		getTekenvenster().teken();
 	}
-
+	public void raiseAantalFout(){
+		tekenvenster.raiseAantalFout();
+	}
 	protected TekenVenster getTekenvenster() {
 		return tekenvenster;
 	}

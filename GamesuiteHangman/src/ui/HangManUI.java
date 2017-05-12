@@ -57,7 +57,7 @@ public class HangManUi {
 		
 		int vorigeRonde = 0;
 		int aantalFout = 0;
-		while(aantalFout <= 10){
+		while(aantalFout <= 11){
 			String letterString;
 			switch(vorigeRonde){
 				case 0: 
@@ -104,7 +104,7 @@ public class HangManUi {
 				}
 			for(String s : letters){
 				if(s.equals(letterString)){
-					
+					aantalFout--;
 				}
 			}
 			boolean geraden = woord.raad(letterString.charAt(0));
@@ -113,6 +113,7 @@ public class HangManUi {
 			else{
 				vorigeRonde = 2;
 				aantalFout++;
+				view.raiseAantalFout();
 			}
 			view.teken();
 			if(woord.isGeraden()){
