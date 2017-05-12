@@ -14,7 +14,6 @@ import domain.HangMan;
 public class HangmanPaneel extends JPanel {
 
 	private static final long serialVersionUID = 1L;	
-	
 	private JTextField letter;	
 	private JLabel woord;
 	

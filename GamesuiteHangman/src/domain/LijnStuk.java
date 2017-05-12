@@ -24,8 +24,9 @@ public class LijnStuk extends Vorm implements Drawable {
 	public LijnStuk(Punt start, Punt einde) {
 		setStartEnEindPunt(start,einde);
 	}
+	
 	//Zet start en eindepunt variabelen
-	public void setStartEnEindPunt(Punt start, Punt einde) throws DomainException {
+	private void setStartEnEindPunt(Punt start, Punt einde) throws DomainException {
 		//Test of start en einde geldig zijn
 		if(start == null || einde == null)throw new DomainException("Start en einde mag niet null zijn!");
 		//Test of startpunt != eindpunt
@@ -34,10 +35,12 @@ public class LijnStuk extends Vorm implements Drawable {
 		this.einde =einde;
 		
 	}
+	
 	//Geef startpunt terug
 	public Punt getStartPunt() {
 		return start;
 	}
+	
 	//Geef eindpunt terug
 	public Punt getEindPunt() {
 		return einde;
@@ -45,7 +48,8 @@ public class LijnStuk extends Vorm implements Drawable {
 	
 	@Override
 	public boolean equals(Object o){
-		boolean result =false;
+		boolean result = false;
+		
 		if(o instanceof LijnStuk){
 			LijnStuk l =(LijnStuk)o;
 			//Als start en eindpunt gelij zijn
@@ -53,12 +57,14 @@ public class LijnStuk extends Vorm implements Drawable {
 				result = true;
 			}
 		}
+		
 		return result;
 	}
 	@Override
 	public String toString(){
 		return "start: " + start + "\n einde: " + einde;
 	}
+	
 	@Override
 	public Omhullende getOmhullende() {
 		return new Omhullende(new Punt(minX(), minY()), maxX() - minX(), maxY() - minY() );
@@ -83,6 +89,7 @@ public class LijnStuk extends Vorm implements Drawable {
 	{
 		return start.getY() > einde.getY() ? start.getY() : einde.getY();
 	}
+	
 	@Override
 	public void teken(Graphics graphics) {
 		if(isZichtbaar()) graphics.drawLine(start.getX(), start.getY(), einde.getX(), einde.getY());

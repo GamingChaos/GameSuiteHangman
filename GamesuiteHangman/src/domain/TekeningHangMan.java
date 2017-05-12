@@ -43,8 +43,8 @@ public class TekeningHangMan extends Tekening {
 	public void voegVormToe(Vorm vorm) {
 		if (vorm == null)
 			throw new DomainException("vorm moet bestaan");
+	
 		vormen.add(vorm);
-
 	}
 
 	public List getLijst() {
@@ -57,23 +57,24 @@ public class TekeningHangMan extends Tekening {
 
 	public List getAantalZichtbare() {
 		List zichtbare = new ArrayList<Vorm>();
+		
 		for (Vorm vorm : vormen) {
 			if (vorm.isZichtbaar())
 				zichtbare.add(vorm);
 		}
+		
 		return zichtbare;
 	}
 
 	public void zetVolgendeZichtbaar() {
-		if (getAantalZichtbare().size() == vormen.size())
-			throw new DomainException("Alles is al zichtbaar");
+		if (getAantalZichtbare().size() == vormen.size()) throw new DomainException("Alles is al zichtbaar");
+		
 		for (Vorm vorm : vormen) {
 			if (vorm.isZichtbaar() == false) {
 				vorm.setZichtbaarheid(true);
 				break;
 			}
 		}
-
 	}
 	public Vorm getVorm(int index){
 		return vormen.get(index);
@@ -87,6 +88,7 @@ public class TekeningHangMan extends Tekening {
 		}
 
 	}
+	
 	public void verwijder(Vorm vorm){
 		if(!vormen.contains(vorm)) throw new DomainException("Vorm zit niet in de lijst");
 		vormen.remove(vorm);

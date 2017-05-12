@@ -28,6 +28,7 @@ public class PictionaryUI {
 		view.teken();
 		play();
 	}
+	
 	public static void play(){
 		System.exit(0);
 	}
