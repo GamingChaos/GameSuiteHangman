@@ -93,4 +93,14 @@ public class TekeningHangMan extends Tekening {
 		if(!vormen.contains(vorm)) throw new DomainException("Vorm zit niet in de lijst");
 		vormen.remove(vorm);
 	}
+
+	public int getAantalOnzichtbaar() {
+		int temp = 0;
+		for(Vorm vorm: vormen){
+			if(vorm.isZichtbaar() == false){
+				temp++;
+			}
+		}
+		return temp;
+	}
 }

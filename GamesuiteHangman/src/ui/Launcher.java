@@ -44,7 +44,7 @@ public class Launcher {
 				HangManUi hangui = new HangManUi(speler);
 				break;
 			case "Pictionary":
-				PictionaryUi picui = new PictionaryUi(speler);
+				PictionaryUI picui = new PictionaryUI(speler);
 				break;
 			default: throw new IllegalArgumentException("typ de naam van het spel juist");
 			}
