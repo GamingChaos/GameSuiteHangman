@@ -63,32 +63,40 @@ public class Tekening implements Drawable{
 		Vorm handRechts = new Cirkel(new Punt(330, 170), 5);
 		vormen.add(handRechts);
 	}
+	
 	public String getNaam(){
 		return naam;
 	}
+	
 	public void voegToe(Vorm vorm) throws DomainException{
 		if(vorm == null) throw new DomainException("Vorm mag niet null zijn");
 		if(vorm.getOmhullende().minimaleX() < getMinX()) throw new DomainException("mag niet buiten de tekening vormen aanmaken");
 		if(bevat(vorm)) throw new DomainException("Vorm is al toegevoegd");
+		
 		vormen.add(vorm);
 	}
+	
 	public Vorm getVorm(int index){
 		return vormen.get(index);
 	}
+	
 	public List<Vorm> getVormLijst(){
 		return vormen;
 	}
+	
 	public int getAantalVormen(){
 		return vormen.size();
 	}
+	
 	public void verwijder(Vorm vorm){
 		vormen.remove(vorm);
 	}
+	
 	public boolean bevat(Vorm vorm){
 		return vormen.contains(vorm);
 	}
 	
-	public void setNaam(String naam) throws DomainException {
+	private void setNaam(String naam) throws DomainException {
 		if(naam == null || naam.trim().isEmpty()) throw new DomainException("Naam mag niet leeg zijn");
 		this.naam = naam;
 	}
@@ -96,7 +104,7 @@ public class Tekening implements Drawable{
 	@Override
 	public boolean equals(Object o){
 		boolean temp = true;
-		 if(o == null) return false;
+		if(o == null) return false;
 		if(o instanceof Tekening){
 			Tekening t = (Tekening) o;
 			if((getAantalVormen() == t.getAantalVormen() ) ){
@@ -107,21 +115,25 @@ public class Tekening implements Drawable{
 			else if(getAantalVormen() != t.getAantalVormen()){
 				return false;
 			}
-			
 		}
 		return temp;
 	}
+	
 	@Override
 	public String toString(){
 		String temp = "tekening met naam " + getNaam() + " bestaat uit " + getAantalVormen() + " vormen:";
+		
 		for(Vorm vorm: vormen){
 			temp += "\n" + vorm.toString();
 		}
+		
 		return temp;
 	}
+	
 	public static int getMinX() {
 		return MIN_X;
 	}
+	
 	@Override
 	public void teken(Graphics graphics) {
 		// TODO Auto-generated method stub

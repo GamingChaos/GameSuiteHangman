@@ -57,6 +57,7 @@ public class HangManUi {
 		
 		int vorigeRonde = 0;
 		int aantalFout = 0;
+		
 		while(aantalFout <= 11){
 			String letterString;
 			switch(vorigeRonde){

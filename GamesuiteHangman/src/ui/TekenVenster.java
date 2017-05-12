@@ -38,12 +38,14 @@ public class TekenVenster extends Canvas {
 		this.setPreferredSize(new Dimension(400, 400));
 		setTekening(tekening);
 	}
+	
 	public void raiseAantalFout(){
 		this.aantalFout++;
 	}
+	
 	private void setTekening(Tekening tekening) {
-		if (tekening == null)
-			throw new UiException("Tekening mag niet null zijn");
+		if (tekening == null) throw new UiException("Tekening mag niet null zijn");
+		
 		this.tekening = tekening;
 	}
 

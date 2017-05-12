@@ -89,7 +89,5 @@ public class Rechthoek extends Vorm implements Drawable{
 			graphics.drawLine(hoek.getX()+breedte, hoek.getY(), hoek.getX()+breedte, hoek.getY()-hoogte);
 			graphics.drawLine(hoek.getX(), hoek.getY()-hoogte, hoek.getX()+breedte, hoek.getY()-hoogte);
 		}
-		
-		
 	}
 }

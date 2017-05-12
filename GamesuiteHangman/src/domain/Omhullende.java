@@ -15,15 +15,13 @@ package domain;
 */
 
 public class Omhullende {
-private Punt linkerBovenhoek;
-private int breedte,hoogte;
-
+	private Punt linkerBovenhoek;
+	private int breedte,hoogte;
 
 	public Omhullende(Punt linkerBovenhoek, int breedte, int hoogte) {
 		setHoogte(hoogte);
 		setBreedte(breedte);
-		setLinkerBovenhoek(linkerBovenhoek);
-		
+		setLinkerBovenhoek(linkerBovenhoek);	
 	}
 
 	public Punt getLinkerBovenhoek() {
@@ -68,6 +66,7 @@ private int breedte,hoogte;
 	public int maximaleY(){
 		return linkerBovenhoek.getY() + hoogte;
 	}
+	
 	@Override
 	public boolean equals(Object o){
 		boolean result = false;
@@ -75,18 +74,15 @@ private int breedte,hoogte;
 			Omhullende O = (Omhullende)o;
 			if(this.getLinkerBovenhoek().equals(O.linkerBovenhoek) && this.breedte == O.breedte && this.hoogte == O.hoogte ){
 			result = true;	
-			}
-			
+			}		
 		}
 		
 		return result;
-	
-		
 	}
+	
 	@Override
 	public String toString(){
-		return "linkerBovenhoek: " + linkerBovenhoek + "\n breedte: " + breedte + "\n hoogte: " + hoogte;
-		
+		return "linkerBovenhoek: " + linkerBovenhoek + "\n breedte: " + breedte + "\n hoogte: " + hoogte;	
 	}
 }
 

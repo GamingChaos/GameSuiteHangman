@@ -33,20 +33,24 @@ public class HintWoord {
 	
 	public boolean raad(char letter){
 		boolean result = false;
+		
 		for(int i = 0; i < letterLijst.size(); i++){
 			if(letterLijst.get(i).raad(letter) == true)
 				result = true;
 		}
+		
 		return result;
 	}
 	
 	public boolean isGeraden(){
 		int aantal = 0;
+		
 		for(int i = 0; i < letterLijst.size(); i++){
 			if(letterLijst.get(i).isGeraden() == true){
 				aantal++;
 			}
 		}
+		
 		if(aantal == letterLijst.size())
 			return true;
 		return false;

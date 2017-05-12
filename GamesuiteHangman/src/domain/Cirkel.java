@@ -21,10 +21,7 @@ public class Cirkel extends Vorm implements Drawable{
 	private Punt middelpunt;
 	private int radius;
 	
-	
-	
 	//Cirkel constructor voor punt en radius gegeven
-
 	public Cirkel(Punt punt, int radius){
 		try{
 			//Zet variabelen
@@ -92,7 +89,6 @@ public class Cirkel extends Vorm implements Drawable{
 		if(isZichtbaar()){
 			graphics.fillOval(getMiddelpunt().getX()-getRadius(), 
 					getMiddelpunt().getY()-getRadius(), 2*getRadius(), 2*getRadius());
-		}
-		
+		}	
 	}
 }
